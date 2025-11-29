@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seasonal Offers | Solis Green Energy</title>
+  <meta name="description" content="Seasonal offers and cashback campaigns from Solis Green Energy. Click an offer to view details and claim your gift." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://offers.solisgreenindia.in/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Seasonal Offers | Solis Green Energy" />
+  <meta property="og:description" content="Seasonal offers and cashback campaigns from Solis Green Energy. Click an offer to view details and claim your gift." />
+  <meta property="og:url" content="https://offers.solisgreenindia.in/" />
+  <meta property="og:image" content="https://offers.solisgreenindia.in/assets/images/og-offers.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/christmas/assets/images/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/christmas/assets/images/favicon-180.png" />
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="/assets/css/offers.css">
+
+  <!-- GTM (already present on main site) - not injected here; dataLayer pushes handled by offers.js -->
+</head>
+<body>
+  <main class="offers-hero" role="main">
+    <header class="offers-header container">
+      <a class="brand" href="https://solisgreenindia.in" target="_blank" rel="noopener">
+        <img src="/images/logo/logo.png" alt="Solis Green India" class="brand-logo" />
+      </a>
+      <h1 class="offers-title">Seasonal Offers</h1>
+      <p class="offers-sub">Limited-time cashback and festive rewards. Click an offer to view details and claim.</p>
+    </header>
+
+    <section class="offers-list container" aria-label="Active offers">
+      <article class="offer-card highlight" data-offer="christmas" tabindex="0" role="link" aria-label="Christmas Offer — Click to open">
+        <div class="card-badge">Popular</div>
+        <h2>🎄 Christmas Offer</h2>
+        <p class="card-desc">Instant ₹5,000 gift on confirmation. Mandatory KSEB details required. Limited slots.</p>
+        <div class="card-actions">
+          <a href="/christmas/" class="btn btn-primary offer-cta" data-offer="christmas">View Offer</a>
+        </div>
+      </article>
+
+      <article class="offer-card" data-offer="newyear" tabindex="0" role="link" aria-label="New Year Offer — Coming soon">
+        <h2>🎉 New Year Offer</h2>
+        <p class="card-desc">Coming soon — Special discounts for early bookings.</p>
+        <div class="card-actions">
+          <a href="#" class="btn btn-outline disabled">Coming Soon</a>
+        </div>
+      </article>
+
+      <article class="offer-card" data-offer="summer" tabindex="0" role="link" aria-label="Summer Offer — Coming soon">
+        <h2>☀️ Summer Offer</h2>
+        <p class="card-desc">Coming soon — Summer savings and maintenance deals.</p>
+        <div class="card-actions">
+          <a href="#" class="btn btn-outline disabled">Coming Soon</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="offers-info container">
+      <p>All offers are subject to verification. Large gifts require verification and commissioning. Read terms on each offer page.</p>
+    </section>
+
+    <footer class="offers-footer container">
+      <p>© <span id="year"></span> Solis Green Energy Solutions — offers.solisgreenindia.in</p>
+    </footer>
+  </main>
+
+  <script src="/assets/js/offers.js" defer></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
