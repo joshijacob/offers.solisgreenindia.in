@@ -3,69 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Seasonal Offers | Solis Green India</title>
-
-  <meta name="description" content="Seasonal offers and festive cashback campaigns from Solis Green India. Enjoy special Christmas and New Year solar rewards." />
+  <title>Christmas Offer | Solis Green India — Win Up To ₹25,000</title>
+  <meta name="description" content="Christmas Offer — Join Solis Green India and get ₹5,000 instantly on registration. Chance to win up to ₹25,000 in festive rewards. Mandatory KSEB details required." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://offers.solisgreenindia.in/" />
 
-  <!-- Poppins font -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Main theme CSS (Gold & White Premium) -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/offers.css">
 
-  <!-- Christmas accent overrides: red & gold CTAs + badge -->
+  <!-- Inline Christmas accent styles (small overrides for hero sizing) -->
   <style>
-    /* Christmas red & gold accent overrides (scoped, minimal) */
-    .offer-card.highlight { 
-      border: 2px solid rgba(255, 197, 60, 0.12);
-      background: linear-gradient(180deg,#fffaf6,#ffffff);
-    }
-
-    /* badge: glowing red -> gold */
-    .offer-card.highlight .card-badge {
-      background: linear-gradient(90deg, #d72626 0%, #ffb84d 100%);
-      color: #2b1700;
-      box-shadow: 0 10px 30px rgba(215,40,40,0.12);
-    }
-
-    /* primary CTA (for highlighted/Christmas card): red button with gold rim */
-    .offer-card.highlight .btn-primary {
-      background: linear-gradient(180deg, #c92b2b, #8b1a1a);
-      border: 1px solid rgba(255, 190, 80, 0.14);
-      box-shadow: 0 12px 34px rgba(200,30,30,0.18);
-      color: #fff;
-    }
-
-    /* CTA hover: gold outline and subtle glow */
-    .offer-card.highlight .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 48px rgba(200,30,30,0.24), 0 0 18px rgba(255, 190, 80, 0.08);
-      border-color: rgba(255,190,80,0.28);
-    }
-
-    /* small trophy/amount style if you show amounts later */
-    .prize-pill {
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      font-weight:700;
-      background: linear-gradient(90deg,#ffd24d,#ffb84d);
-      color:#3b2300;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
-
-    /* Slight extra emphasis for Christmas title */
-    .offer-card.highlight h2::before {
-      content: "🎁 ";
-    }
-
-    /* Ensure text contrast for buttons on mobile */
-    @media (max-width:640px){
-      .offer-card.highlight .btn-primary { padding:12px 18px; font-size:1rem; }
-      .card-badge { font-size:0.9rem; padding:7px 12px; }
-    }
+    /* Make hero text bigger and prize highlight */
+    .hero-banner { padding:28px 22px; border-radius:14px; }
+    .hero-title { font-size: clamp(28px, 5.8vw, 56px); letter-spacing: -0.02em; }
+    .hero-sub { font-size: clamp(15px, 2.2vw, 20px); }
+    .hero-prize { font-size: clamp(32px, 6.6vw, 68px); font-weight:900; color:#d92b2b; text-shadow:0 6px 22px rgba(217,43,43,0.18); }
+    @media (max-width:640px){ .hero-prize { font-size: 30px; } .hero-title{ font-size:28px; } }
   </style>
 </head>
 
@@ -80,72 +36,78 @@
     <p class="offers-sub">Exclusive festive rewards and limited-period cashback programs.</p>
   </header>
 
-  <!-- decorative confetti/glow (optional) -->
-  <div class="hero-confetti" aria-hidden="true"></div>
+  <!-- Snow layer (CSS) and sparkle canvas (JS draws stars) -->
+  <div class="snow-layer" aria-hidden="true"></div>
+  <canvas id="sparkleCanvas" class="sparkle-canvas" aria-hidden="true"></canvas>
 
-  <!-- Offers carousel -->
+  <!-- Hero Banner -->
   <main class="container" role="main">
+    <section class="hero-banner" aria-labelledby="heroHeading">
+      <h2 id="heroHeading" class="hero-title">🎄 Christmas Offer — <span class="hero-prize">Win Up To ₹25,000</span></h2>
+      <p class="hero-sub">
+        Every new registered user gets <strong>₹5,000</strong> instantly — submit the short form with mandatory <em>KSEB Consumer No.</em> and <em>KSEB Registered Phone</em> to claim.
+        <span style="display:block;margin-top:8px;color:#6b3b2b;">Additionally: a lucky few will get a chance to win the <strong>₹25,000</strong> grand Christmas bonus.</span>
+      </p>
+    </section>
+
+    <!-- Offers carousel -->
     <section class="offers-list" aria-label="Active offers">
       <!-- Christmas (highlighted) -->
       <article class="offer-card highlight" data-offer="christmas" tabindex="0" aria-label="Christmas Offer">
         <div class="card-badge">Popular</div>
+
+        <!-- Animated ribbon + gift icon -->
+        <div class="gift-ribbon" aria-hidden="true">
+          <div class="gift-box" role="img" aria-label="gift box">🎁</div>
+          <div class="ribbon-left"></div>
+          <div class="ribbon-right"></div>
+        </div>
+
         <h2>Christmas Gift Offer</h2>
-        <p class="card-desc">Click to reveal instant gifts up to <strong>₹25,000</strong>. Mandatory KSEB details required. Claim on confirmed submission.</p>
+        <p class="card-desc">
+          Register now & submit the short form (mandatory KSEB details). <strong>Guaranteed ₹5,000</strong> for every confirmed new registration — chance to win the <strong>₹25,000</strong> grand prize.
+        </p>
+
         <div class="card-actions">
-          <a href="/christmas/" class="btn btn-primary offer-cta" data-offer="christmas" title="View Christmas Offer">View Christmas Offer</a>
+          <a href="/christmas/" class="btn btn-primary offer-cta" data-offer="christmas" title="View Christmas Offer">🎁 Reveal My Gift — Claim ₹5,000</a>
         </div>
       </article>
 
       <!-- New Year (coming soon) -->
       <article class="offer-card" data-offer="newyear" tabindex="0" aria-label="New Year Offer - Coming Soon">
         <h2>New Year Offer</h2>
-        <p class="card-desc">Launching soon — special discounts for early bookings.</p>
-        <div class="card-actions">
-          <a class="btn btn-outline disabled" aria-disabled="true">Coming Soon</a>
-        </div>
+        <p class="card-desc">Launching soon — extra rewards for early bookings.</p>
+        <div class="card-actions"><a class="btn btn-outline disabled" aria-disabled="true">Coming Soon</a></div>
       </article>
 
       <!-- Summer (coming soon) -->
       <article class="offer-card" data-offer="summer" tabindex="0" aria-label="Summer Offer - Coming Soon">
         <h2>Summer Solar Offer</h2>
         <p class="card-desc">Prepare for summer savings with smart solar discounts and maintenance promos.</p>
-        <div class="card-actions">
-          <a class="btn btn-outline disabled" aria-disabled="true">Coming Soon</a>
-        </div>
+        <div class="card-actions"><a class="btn btn-outline disabled" aria-disabled="true">Coming Soon</a></div>
       </article>
     </section>
 
-    <!-- Company intro (bottom) -->
+    <!-- Company intro -->
     <section class="company-intro" aria-labelledby="aboutOffers">
       <h2 id="aboutOffers">About Solis Green India</h2>
-
       <p class="intro-text">
-        Solis Green India is a leading solar EPC company based in Thiruvalla, Kerala—trusted by 
-        <strong>500+ homeowners and businesses</strong>. We deliver end-to-end solar solutions including consultation, installation, subsidy processing, and maintenance.
+        Solis Green India — a trusted solar EPC company based in Thiruvalla, Kerala. <strong>500+ homeowners & businesses</strong> served. We offer consultation, installation, subsidy processing and long-term support.
       </p>
 
-      <ul class="intro-list" aria-hidden="false">
-        <li>Residential & Commercial Solar Installations</li>
+      <ul class="intro-list">
+        <li>Residential & Commercial Installations</li>
         <li>KSEB On-Grid & Hybrid Systems</li>
         <li>Government Subsidy Assistance</li>
-        <li>Expert Survey & Technical Support</li>
-        <li>Quality Panels with 25-year Warranty</li>
-        <li>Local Team with 24×7 Service Support</li>
+        <li>Survey & Technical Support</li>
+        <li>Quality Panels — 25-year warranty</li>
+        <li>Local 24×7 Service Team</li>
       </ul>
 
-      <div class="features-grid" role="list">
-        <div class="feature-box" role="listitem">
-          <h3>500+ Installations</h3>
-          <p>Trusted by homeowners and businesses across Kerala.</p>
-        </div>
-        <div class="feature-box" role="listitem">
-          <h3>Govt Subsidy Support</h3>
-          <p>Guidance for Kerala – KSEB / MNRE subsidy approvals.</p>
-        </div>
-        <div class="feature-box" role="listitem">
-          <h3>25-Year Warranty</h3>
-          <p>High-performance panels backed by long-term warranties.</p>
-        </div>
+      <div class="features-grid">
+        <div class="feature-box"><h3>500+ Installations</h3><p>Trusted across Kerala.</p></div>
+        <div class="feature-box"><h3>Govt Subsidy Support</h3><p>We help with KSEB & MNRE processing.</p></div>
+        <div class="feature-box"><h3>25-Year Warranty</h3><p>Top-tier panels and workmanship.</p></div>
       </div>
     </section>
 
@@ -155,7 +117,6 @@
         <h3>Contact Solis Green India</h3>
 
         <div class="contact-row with-dividers">
-
           <div class="contact-column">
             <strong>Primary (Sales)</strong>
             <a href="tel:8301849474">📞 83018 49474</a>
@@ -177,7 +138,6 @@
             <a href="tel:8606849474">🛠️ 86068 49474</a>
             <a class="email" href="mailto:solisgreenindia@gmail.com">✉ solisgreenindia@gmail.com</a>
           </div>
-
         </div>
       </div>
     </section>
@@ -189,6 +149,9 @@
 
   <!-- Scripts -->
   <script src="/assets/js/offers.js" defer></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
