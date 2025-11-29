@@ -11,10 +11,8 @@
   // -------------------------
   // Configuration
   // -------------------------
-  const REVEAL_API = "/api/reveal"; // server endpoint (not used here but left for compatibility)
-  const CLAIM_API = "/api/claim";   // server endpoint (not used here)
-  const DEFAULT_TTL_SECONDS = 600;
-  const ALLOW_FALLBACK = true;
+  const REVEAL_API = "/api/reveal"; // server endpoint placeholder
+  const CLAIM_API = "/api/claim";   // server endpoint placeholder
 
   // GTM dataLayer
   window.dataLayer = window.dataLayer || [];
@@ -66,10 +64,9 @@
       card.addEventListener("blur", function () { card.classList.remove("focused"); });
     });
 
-    // Accessibility: focus first highlighted card (optional)
+    // Accessibility: optional focus first highlighted card
     const first = document.querySelector(".offer-card.highlight");
     if (first) {
-      // optionally focus for keyboard users
       // first.focus();
     }
   });
@@ -85,8 +82,8 @@
   // -------------------------
   (function () {
     const TRACK_SELECTOR = ".offers-list";
-    const INTERVAL_MS = 3500; // auto-advance interval
-    const USER_PAUSE_MS = 6000; // pause after user interaction
+    const INTERVAL_MS = 3500; // auto-advance interval (ms)
+    const USER_PAUSE_MS = 6000; // pause after user interaction (ms)
     let autoTimer = null;
     let userPaused = false;
     let lastUserInteractionAt = 0;
