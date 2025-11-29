@@ -1,34 +1,35 @@
 /* assets/css/offers.css
-   Option 1 — Gold & White Premium Offer Theme
+   Gold & White Premium Offer Theme (full replacement)
    - Soft gold gradient background
    - White cards, elegant gold accents
    - Improved typography (Poppins recommended)
    - Wider cards, responsive carousel-friendly layout
    - CTA styling, hover states, subtle confetti decoration
+   - Contact block with gold vertical dividers
 */
 
-/* Root variables */
+/* Include Poppins in <head> if not already:
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+*/
+
 :root{
   --max-width:1180px;
 
-  /* Background / accents */
-  --bg-top: #fffaf5;           /* soft cream */
-  --bg-bottom: #fff7ed;        /* warm off-white */
-  --hero-glow: rgba(255, 213, 77, 0.07); /* soft gold halo */
+  /* Background & accents */
+  --bg-top: #fffaf5;
+  --bg-bottom: #fff7ed;
+  --hero-glow: rgba(255,213,77,0.07);
 
-  --accent-gold: #d89f2b;      /* warm gold */
-  --accent-gold-2: #ffd24d;    /* highlight gold */
+  --accent-gold: #d89f2b;
+  --accent-gold-2: #ffd24d;
+  --accent-deep: #0d5e14; /* subtle green for CTA */
+  --muted: #6b6b6b;
+  --body-text: #0f2b18;
 
-  --accent-deep: #1f7a1f;      /* small green accent for buttons */
-  --muted: #6b6b6b;            /* muted text */
-  --body-text: #0f2b18;        /* dark text for readability */
-
-  /* card geometry + spacing */
   --gap:22px;
   --radius-lg:16px;
   --radius-md:12px;
 
-  /* shadows */
   --shadow-lg: 0 28px 60px rgba(30,30,30,0.12);
   --shadow-md: 0 10px 30px rgba(30,30,30,0.08);
 
@@ -36,9 +37,9 @@
   --ff-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans";
 }
 
-/* Reset / base */
-*{ box-sizing: border-box; }
-html,body{ height:100%; }
+/* Reset & base */
+*{box-sizing:border-box}
+html,body{height:100%}
 body{
   margin:0;
   font-family:var(--ff-body);
@@ -78,8 +79,6 @@ body{
 .offers-sub{ margin:0; color:var(--muted); max-width:920px; text-align:center; font-size:1rem; }
 
 /* =========== Offers carousel & cards =========== */
-
-/* Horizontal scrolling container (carousel-friendly) */
 .offers-list{
   display:flex;
   gap:var(--gap);
@@ -93,13 +92,12 @@ body{
 }
 .offers-list::-webkit-scrollbar{ display:none; }
 
-/* Card sizing: wider cards for better visual balance */
 .offer-card{
   flex: 0 0 calc((100% - (var(--gap) * 2)) / 3);
   min-width: calc((100% - (var(--gap) * 2)) / 3);
   max-width: calc((100% - (var(--gap) * 2)) / 3);
   scroll-snap-align:center;
-  background: #ffffff;
+  background:#ffffff;
   color:var(--body-text);
   border-radius:var(--radius-md);
   padding:22px;
@@ -114,10 +112,9 @@ body{
 }
 .offer-card:hover{ transform:translateY(-10px); box-shadow:var(--shadow-lg); }
 
-/* Highlighted card style (Christmas priority) */
 .offer-card.highlight{
   border:2px solid rgba(216,159,43,0.12);
-  background: linear-gradient(180deg, #fffdf8, #ffffff);
+  background: linear-gradient(180deg,#fffdf8,#ffffff);
 }
 
 /* Badge */
@@ -134,14 +131,13 @@ body{
   box-shadow:0 8px 20px rgba(0,0,0,0.06);
 }
 
-/* Title & description */
-.offer-card h2{ margin:0; font-size:1.05rem; font-weight:700; font-family:var(--ff-heading); color: #12321a; }
+/* Titles & desc */
+.offer-card h2{ margin:0; font-size:1.05rem; font-weight:700; font-family:var(--ff-heading); color:#12321a; }
 .card-desc{ margin:0; color:#3b5a45; font-size:0.98rem; line-height:1.6; }
 
 /* Actions & buttons */
 .card-actions{ margin-top:auto; display:flex; gap:12px; align-items:center; }
 
-/* Primary CTA: green button with gold rim on hover */
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
   padding:10px 16px; border-radius:10px; font-weight:700; text-decoration:none;
@@ -189,24 +185,89 @@ body{
 .feature-box h3{ margin:0 0 8px; color:var(--accent-gold); font-size:1.05rem; font-weight:800; }
 .feature-box p{ margin:0; color:#4b6b53; font-size:0.95rem; line-height:1.45; }
 
-/* =========== Contact & footer =========== */
-.contact-block{ margin-top:28px; }
+/* =========== Contact block (high visibility) =========== */
+.contact-block{ margin-top:36px; }
 .contact-inner{
   background: linear-gradient(180deg,#fff,#f9f7ef);
-  padding:18px; border-radius:12px; display:flex; flex-wrap:wrap; gap:18px; justify-content:center;
-  box-shadow:0 12px 30px rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.03);
+  padding:24px;
+  border-radius:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:26px;
+  justify-content:center;
+  box-shadow:0 8px 28px rgba(0,0,0,0.08);
+  border:1px solid rgba(0,0,0,0.05);
 }
-.contact-inner a{ color:#0e4b20; text-decoration:none; font-weight:700; }
+.contact-inner h3{
+  margin:0;
+  color:#333333 !important;
+  font-size:1.15rem;
+  font-weight:700;
+  text-align:center;
+  width:100%;
+}
+
+/* FIX: Proper 3-column layout */
+.contact-row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  max-width: 900px;
+  margin: 12px auto 0;
+  flex-wrap: nowrap;
+}
+
+.contact-row.with-dividers {
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* columns */
+.contact-column{
+  padding: 0 28px;
+  flex: 1;
+  min-width: 240px;
+  text-align: center;
+}
+.contact-column strong{
+  display:block;
+  font-size:1.05rem;
+  margin-bottom:8px;
+  color:#1a2e1a;
+  font-weight:700;
+}
+.contact-column a{
+  display:block;
+  font-size:1rem;
+  margin:4px 0;
+  color:#0b3b1a;
+  font-weight:600;
+  text-decoration:none;
+}
+.contact-column a.whatsapp{ color:#25D366 !important; }
+.contact-column a.email{ color:#1a42b8 !important; }
+
+/* Elegant gold vertical line */
+.contact-row.with-dividers .divider {
+  width: 2px;
+  background: linear-gradient(180deg, #d6a944, #f5d98b, #d6a944);
+  margin: 0 10px;
+  border-radius: 50px;
+}
+
+/* Footer */
 .offers-footer{ margin-top:36px; text-align:center; color:#374235; font-size:0.95rem; }
 
-/* =========== Animations & micro-interactions =========== */
+/* Animations */
 @keyframes fadeUp { from { opacity:0; transform: translateY(8px);} to {opacity:1; transform:none;} }
 .offer-card, .company-intro, .feature-box { animation: fadeUp 520ms ease both; }
 .offers-list .offer-card:nth-child(1){ animation-delay: 0s; }
 .offers-list .offer-card:nth-child(2){ animation-delay: 80ms; }
 .offers-list .offer-card:nth-child(3){ animation-delay: 160ms; }
 
-/* subtle confetti decorative strip (optional) */
+/* Confetti decorative strip (optional) */
 .hero-confetti{ position:absolute; left:50%; top:72px; transform:translateX(-50%); width:640px; height:60px; pointer-events:none; opacity:0.14;
   background-image:
     radial-gradient(circle at 10% 30%, rgba(216,159,43,0.95) 2px, transparent 3px),
@@ -216,12 +277,13 @@ body{
     radial-gradient(circle at 90% 35%, rgba(216,159,43,0.95) 2px, transparent 3px); filter: blur(1px); mix-blend-mode:screen;
 }
 
-/* =========== Responsive adjustments =========== */
+/* Responsive tweaks */
 @media (max-width:1000px){
   .offer-card{ flex: 0 0 calc((100% - var(--gap)) / 2); min-width: calc((100% - var(--gap)) / 2); max-width: calc((100% - var(--gap)) / 2); }
   .intro-list li{ width:calc(50% - 20px); }
+  .contact-row { max-width: 100%; }
 }
-@media (max-width:640px){
+@media (max-width:720px){
   body{ padding:18px 12px; }
   .offers-list{ display:block; overflow:visible; gap:16px; }
   .offer-card{ width:100%; min-width:auto; max-width:none; margin-bottom:var(--gap); }
@@ -229,6 +291,9 @@ body{
   .intro-list li{ width:100%; }
   .brand-logo{ height:46px; }
   .offers-title{ font-size:24px; }
+  /* hide dividers on small screens */
+  .contact-row.with-dividers .divider { display: none; }
+  .contact-row { flex-direction: column; gap: 18px; align-items: center; }
 }
 
 /* Accessibility */
