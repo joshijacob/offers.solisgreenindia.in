@@ -27,23 +27,22 @@
   <meta name="twitter:description" content="Unlock an instant ₹5,000 gift — fill the short form with mandatory KSEB details to claim." />
   <meta name="twitter:image" content="https://offers.solisgreenindia.in/christmas/assets/images/og-christmas.jpg" />
 
-  <!-- Favicons (place these files under /christmas/assets/images/) -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/christmas/assets/images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/christmas/assets/images/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/christmas/assets/images/favicon-180.png">
   <link rel="manifest" href="/christmas/manifest.webmanifest" />
   <meta name="theme-color" content="#0f3f0f" />
 
-  <!-- Preload hero (optional if you add OG/hero images) -->
+  <!-- Preload hero -->
   <link rel="preload" href="/christmas/assets/images/christmas-hero.webp" as="image" type="image/webp">
 
-  <!-- Google Tag Manager (same GTM container as main site) -->
+  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id=GTM-5C2D5BG9'+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-5C2D5BG9');</script>
-  <!-- End Google Tag Manager -->
 
   <style>
     :root{
@@ -54,50 +53,87 @@
       --card:#ffffff;
       --muted:#6b7280;
       --max-width:980px;
+      --accent-dark: #071d13;
     }
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans","Helvetica Neue";
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans";
       background: linear-gradient(180deg,#072214 0%, #0e3a12 60%);
       color:#062018;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       padding:28px 16px;
     }
-    .container{
-      max-width:var(--max-width);
-      margin:0 auto;
-    }
+    .container{ max-width:var(--max-width); margin:0 auto; }
+
+    /* -------- Hero (UPDATED: centered, larger, shows ₹25,000) -------- */
     header.hero{
       background: linear-gradient(135deg,var(--red-600),#8b0000);
       color:var(--gold);
-      padding:32px;
+      padding:28px 26px;
       border-radius:14px;
       box-shadow:0 12px 30px rgba(0,0,0,0.35);
       text-align:center;
+      position:relative;
+      overflow:hidden;
     }
-    header.hero h1{
-      margin:0 0 6px;
-      font-size:clamp(22px,4vw,36px);
-      letter-spacing:0.6px;
+    .hero h1{
+      margin:0;
+      font-size:clamp(26px,5.2vw,56px);
+      letter-spacing:-0.02em;
+      font-weight:900;
+      color:#ffd84d;
+      text-shadow:0 3px 8px rgba(0,0,0,0.28);
+      line-height:1.02;
     }
-    header.hero p{margin:0; opacity:0.95}
-    .layout{
-      display:grid;
-      grid-template-columns: 1fr 420px;
-      gap:22px;
-      margin-top:20px;
+    .hero .sub{
+      margin-top:10px;
+      color:#ffefbf;
+      font-size:clamp(14px,2vw,20px);
     }
-    @media (max-width:880px){ .layout{grid-template-columns:1fr} }
+    .hero .guarantee {
+      display:block;
+      margin-top:10px;
+      color:#fff;
+      font-weight:800;
+      font-size:clamp(20px,3vw,28px);
+    }
 
-    /* left column */
+    /* shine sweep */
+    .shine-effect {
+      position:absolute; top:0; left:-150%; width:50%; height:100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+      transform:skewX(-20deg); animation: shine 6s infinite ease-in-out; pointer-events:none;
+      filter: blur(6px); opacity:0.9;
+    }
+    @keyframes shine { 0%{ left:-150% } 60%{ left:150% } 100%{ left:150% } }
+
+    /* subtle snow overlay */
+    .snow {
+      position:absolute; inset:0; pointer-events:none; z-index:1; opacity:0.08;
+      background-image: radial-gradient(white 1.5px, transparent 5px);
+      background-size: 12px 12px;
+      animation: snowFall 30s linear infinite;
+      mix-blend-mode: screen;
+    }
+    @keyframes snowFall { 0%{ transform: translateY(-8vh) } 100%{ transform: translateY(110vh) } }
+
+    /* layout */
+    .layout{ display:grid; grid-template-columns:1fr 420px; gap:22px; margin-top:20px; align-items:start; }
+    @media (max-width:880px){ .layout{ grid-template-columns:1fr } }
+
+    /* cards */
     .card{
       background:var(--card);
       padding:22px;
       border-radius:12px;
-      box-shadow:0 8px 22px rgba(0,0,0,0.15);
+      box-shadow:0 8px 22px rgba(0,0,0,0.18);
+      position:relative;
+      overflow:visible;
     }
+
     .prize-banner{
       text-align:center;
       border-radius:10px;
@@ -107,114 +143,94 @@
       margin-bottom:16px;
       transform:skewX(-1deg);
     }
-    .prize-amount{
-      font-size:36px;
-      font-weight:800;
-      color:var(--red-600);
-      text-shadow:0 3px 0 rgba(0,0,0,0.06);
-    }
+    .prize-amount{ font-size:36px; font-weight:900; color:var(--red-600); text-shadow:0 3px 0 rgba(0,0,0,0.06); }
     .muted{ color:var(--muted); font-size:0.95rem; }
 
-    .reveal-area{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      justify-content:center;
-      margin:16px 0 8px;
-      flex-wrap:wrap;
-    }
+    .reveal-area{ display:flex; gap:12px; align-items:center; justify-content:center; margin:16px 0 8px; flex-wrap:wrap; }
     .reveal-btn{
       background:linear-gradient(180deg,var(--green-700),var(--green-900));
-      color: #fff;
-      border:none;
-      border-radius:999px;
-      padding:14px 26px;
-      font-weight:700;
-      cursor:pointer;
-      box-shadow:0 8px 20px rgba(0,0,0,0.18);
-      transition:transform .14s ease,opacity .14s ease;
+      color:#fff; border:none; border-radius:999px; padding:14px 26px; font-weight:800;
+      cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.18); transition:transform .14s ease,opacity .14s ease;
       font-size:1rem;
     }
-    .reveal-btn[disabled]{opacity:.6; cursor:not-allowed; transform:none}
+    .reveal-btn[disabled]{ opacity:.6; cursor:not-allowed; transform:none; }
 
-    .info{
-      text-align:center;
-      font-size:0.95rem;
-      color:#0f2a18;
-    }
+    .info{ text-align:center; font-size:0.96rem; color:#0f2a18; }
 
-    /* right column (form) */
-    form.claim-form{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .form-title{
-      font-size:1.15rem;
-      font-weight:700;
-      color:var(--green-900);
-      margin-bottom:6px;
-    }
-    label.small{ font-size:0.9rem; display:block; margin-bottom:6px; font-weight:600; color:#123a12;}
+    /* right column form */
+    form.claim-form{ display:flex; flex-direction:column; gap:12px; }
+    .form-title{ font-size:1.15rem; font-weight:700; color:var(--green-900); margin-bottom:6px; }
+    label.small{ font-size:0.95rem; display:block; margin-bottom:6px; font-weight:600; color:#123a12; }
     input[type="text"], input[type="tel"], input[type="email"]{
-      padding:12px 14px;
-      border-radius:10px;
-      border:1px solid #e6e6e6;
-      font-size:1rem;
-      width:100%;
+      padding:12px 14px; border-radius:10px; border:1px solid #e6e6e6; font-size:1rem; width:100%;
     }
     input:focus{ outline:3px solid rgba(31,122,31,0.12); border-color:var(--green-700); }
-    .muted-note{ font-size:0.9rem; color:var(--muted) }
     .submit-btn{
       background: linear-gradient(180deg,var(--green-900),var(--green-700));
-      color:#fff; border:0; padding:14px 18px; border-radius:10px;
-      font-weight:800; cursor:pointer; font-size:1rem;
+      color:#fff; border:0; padding:14px 18px; border-radius:10px; font-weight:800; cursor:pointer; font-size:1rem;
     }
     .submit-btn[disabled]{ opacity:.6; cursor:not-allowed; }
 
-    .small-muted{ font-size:0.86rem; color:var(--muted); }
     .terms{ display:flex; gap:8px; align-items:center; font-size:0.92rem; color:#3a463a; }
     .countdown{ font-weight:800; color:var(--red-600); }
 
-    /* aria-live */
-    .sr-live{ position: absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+    /* small SR live */
+    .sr-live{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 
     footer p{ color:#dfeee1; text-align:center; margin-top:20px; font-size:0.95rem; }
 
-    /* tiny helpers */
+    /* contact / helper */
     .row{ display:flex; gap:10px }
     .error{ color:#b91c1c; font-size:0.9rem; }
     .success{ color:#0a7a23; font-size:0.96rem; }
+
+    /* small gift ribbon on card */
+    .gift-ribbon{ position:absolute; left:18px; top:-28px; width:96px; height:96px; display:flex; align-items:center; justify-content:center; transform: rotate(-8deg); pointer-events:none; z-index:6; }
+    .gift-box{ width:64px; height:64px; border-radius:10px; background: linear-gradient(180deg,#ffefdd,#ffd7b0); display:flex; align-items:center; justify-content:center; font-size:28px; box-shadow:0 12px 30px rgba(200,40,40,0.14); animation: gift-bounce 3.2s ease-in-out infinite; }
+    @keyframes gift-bounce{ 0%{ transform: translateY(0) } 40%{ transform: translateY(-10px) rotate(-4deg) } 70%{ transform: translateY(-6px) rotate(-2deg) } 100%{ transform: translateY(0) } }
+    .ribbon-left, .ribbon-right{ position:absolute; bottom:6px; width:16px; height:36px; background: linear-gradient(180deg,#c92b2b,#b01818); border-radius:3px; transform-origin: top center; }
+    .ribbon-left{ left:4px; transform: rotate(-20deg); } .ribbon-right{ right:4px; transform: rotate(20deg); }
+
+    /* small responsiveness */
+    @media (max-width:720px){
+      body{ padding:18px 12px; }
+      .hero h1{ font-size:28px; }
+      .layout{ grid-template-columns:1fr; }
+      .gift-ribbon{ display:none; }
+    }
   </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C2D5BG9"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <div class="container" role="main">
+    <!-- HERO: centered, larger, shows ₹25,000 and ₹5,000 guarantee -->
     <header class="hero" role="banner" aria-labelledby="page-title">
-      <h1 id="page-title">🎄 Christmas Offer — Unlock ₹5,000 Instantly</h1>
-      <p>Fill the short form with mandatory KSEB Consumer No. & KSEB Reg. Phone to claim. Slot reserved for a short time — submit to confirm.</p>
+      <h1 id="page-title">🎄 Christmas Special — Chance to Win <span style="color:#fff;">₹25,000</span> 🎁</h1>
+      <p class="sub">Every new registered customer receives an <strong class="guarantee">₹5,000 Guaranteed Cashback</strong></p>
+      <p class="sub" style="margin-top:8px">Submit mandatory <em>KSEB Consumer No.</em> & <em>KSEB Registered Phone</em> to claim. Limited time festive offer — confirm your slot now.</p>
+
+      <div class="shine-effect" aria-hidden="true"></div>
+      <div class="snow" aria-hidden="true"></div>
     </header>
 
     <div style="height:18px"></div>
 
-    <div class="layout">
-      <!-- Left: Prize area & explanation -->
+    <div class="layout" aria-live="polite">
+      <!-- Left column: explanation + reveal -->
       <section class="card" aria-labelledby="prize-heading">
-        <h2 id="prize-heading" class="muted">How it works</h2>
+        <h2 id="prize-heading" class="muted" style="margin:0 0 8px">How it works</h2>
 
         <div class="prize-banner" role="region" aria-live="polite" aria-atomic="true">
-          <div style="font-size:0.95rem; font-weight:700; color:#4b3b00">INSTANT GIFT</div>
+          <div style="font-size:0.95rem; font-weight:800; color:#4b3b00">INSTANT GIFT</div>
           <div class="prize-amount">₹5,000</div>
           <div class="muted">Payable to every <strong>confirmed</strong> customer after verification & commissioning</div>
+          <div style="margin-top:8px; font-size:0.95rem; color:#4b3b00">Grand prize: chance to win <strong style="color:#b21b1b">₹25,000</strong></div>
         </div>
 
-        <p class="info muted">
-          Click <strong>Unlock Your Gift</strong> to reserve a slot for <strong>10 minutes</strong>. You must submit the claim form (mandatory KSEB Consumer No. & KSEB Reg. Phone) before the timer ends — otherwise the slot is released.
-        </p>
+        <p class="info muted">Click <strong>Unlock Your Gift</strong> to reserve a slot for <strong>10 minutes</strong>. You must submit the claim form (mandatory KSEB Consumer No. & KSEB Reg. Phone) before the timer ends — otherwise the slot is released.</p>
 
         <div class="reveal-area">
           <button id="revealBtn" class="reveal-btn" aria-describedby="reveal-desc">🎁 Unlock Your Gift</button>
@@ -224,19 +240,17 @@
 
         <div id="revealResult" style="margin-top:14px;display:none">
           <p class="success" id="revealMessage"></p>
-          <p class="small-muted">Reservation expires in <span id="countdown" class="countdown">--:--</span></p>
+          <p class="small-muted" style="text-align:center">Reservation expires in <span id="countdown" class="countdown">--:--</span></p>
         </div>
 
         <div id="revealErrors" style="margin-top:12px"></div>
 
         <hr style="margin:18px 0; border:none; border-top:1px solid #f2f2f2" />
 
-        <div>
-          <p class="muted-note"><strong>Important:</strong> Payment of ₹5,000 is processed only after verification and commissioning. We will contact you on the phone number you provide.</p>
-        </div>
+        <div><p class="muted-note"><strong>Important:</strong> Payment of ₹5,000 is processed only after verification and commissioning. We will contact you on the phone number you provide.</p></div>
       </section>
 
-      <!-- Right: Form -->
+      <!-- Right column: form -->
       <aside class="card" aria-labelledby="form-heading">
         <h3 id="form-heading" class="form-title">Claim Form</h3>
 
@@ -291,11 +305,12 @@
     <div class="sr-live" id="liveRegion" aria-live="polite"></div>
   </div>
 
+  <!-- JS: reveal + claim logic + small decorative sparkle canvas -->
   <script>
     (function(){
       // ------- Configuration -------
-      const REVEAL_API = '/api/reveal'; // serverless endpoint (Vercel) - should be implemented server-side
-      const CLAIM_API  = '/api/claim';  // serverless endpoint (Vercel) - should be implemented server-side
+      const REVEAL_API = '/christmas/api/reveal'; // adjust if your API path differs
+      const CLAIM_API  = '/christmas/api/claim';  // adjust if your API path differs
       const DEFAULT_TTL_SECONDS = 600; // fallback TTL (10 minutes) used in demo mode
       const ALLOW_FALLBACK = true;     // if API not present, page works in demo mode
       // ------------------------------
@@ -313,10 +328,9 @@
       const formFeedback = document.getElementById('formFeedback');
       const liveRegion = document.getElementById('liveRegion');
 
-      let reservation = null; // { token, expiresAt (ms) }
+      let reservation = null; // { token, expiresAt (ms), prize }
       let countdownTimer = null;
 
-      // utility: format seconds to MM:SS
       function formatSeconds(s){
         s = Math.max(0, Math.floor(s));
         const m = Math.floor(s/60).toString().padStart(2,'0');
@@ -324,13 +338,11 @@
         return `${m}:${sec}`;
       }
 
-      // show message in live region for screen readers
       function announce(msg){
         liveRegion.textContent = msg;
-        setTimeout(()=> liveRegion.textContent = '', 1500);
+        setTimeout(()=> liveRegion.textContent = '', 1400);
       }
 
-      // Start countdown to expiration
       function startCountdown(expiresAtMs){
         clearInterval(countdownTimer);
         function tick(){
@@ -357,37 +369,28 @@
         announce('Reservation expired');
       }
 
-      // Basic client-side validations
       function validatePhone(v){ return /^[6-9]\d{9}$/.test(v.trim()); }
       function validateKsebConsumer(v){ return /^[A-Za-z0-9\-]{5,20}$/.test(v.trim()); }
 
-      // Called when reveal button clicked
       async function handleReveal(){
         revealErrors.innerHTML = '';
         revealBtn.disabled = true;
         revealBtn.textContent = '🎅 Checking your gift...';
 
-        // Try to call server endpoint
         try {
           const resp = await fetch(REVEAL_API, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ campaign: 'christmas' }) });
           if (!resp.ok) throw new Error('Server returned ' + resp.status);
           const data = await resp.json();
-          // Expected server response: { prize:5000, revealToken: "...", expiresIn: 600 }
+          // expected: { prize:5000, revealToken: "...", expiresIn: 600 }
           const prize = data.prize ?? 5000;
           const token = data.revealToken ?? data.token ?? null;
           const ttl = parseInt(data.expiresIn ?? data.ttl ?? DEFAULT_TTL_SECONDS, 10);
 
-          if (!token){
-            throw new Error('Missing reveal token from server.');
-          }
+          if (!token) throw new Error('Missing reveal token from server.');
 
-          reservation = {
-            token,
-            prize,
-            expiresAt: Date.now() + (ttl * 1000)
-          };
+          reservation = { token, prize, expiresAt: Date.now() + (ttl * 1000) };
           revealTokenInput.value = token;
-          revealMessage.textContent = `🎉 You have unlocked ₹${prize.toLocaleString()} — fill the form to claim within the time limit.`;
+          revealMessage.textContent = `🎉 You unlocked ₹${prize.toLocaleString()} — fill the form to claim within the time limit.`;
           revealResult.style.display = 'block';
           revealErrors.innerHTML = '';
           revealBtn.textContent = '🎁 Gift Reserved';
@@ -395,18 +398,12 @@
           submitBtn.disabled = false;
           announce('Gift reserved. Form is available.');
         } catch(err){
-          // If API missing or failed, optionally fallback to demo mode
           console.warn('Reveal API failed:', err);
           if (ALLOW_FALLBACK){
-            // Demo: create a local reservation token that expires in DEFAULT_TTL_SECONDS
             const demoToken = 'demo-' + Math.random().toString(36).slice(2,12);
-            reservation = {
-              token: demoToken,
-              prize: 5000,
-              expiresAt: Date.now() + DEFAULT_TTL_SECONDS*1000
-            };
+            reservation = { token: demoToken, prize: 5000, expiresAt: Date.now() + DEFAULT_TTL_SECONDS*1000 };
             revealTokenInput.value = demoToken;
-            revealMessage.textContent = `🎉 Demo: You have unlocked ₹${reservation.prize.toLocaleString()}. This is a local demo reservation — integrate server APIs for production.`;
+            revealMessage.textContent = `🎉 Demo: You unlocked ₹${reservation.prize.toLocaleString()}. This is a local demo reservation — integrate server APIs for production.`;
             revealResult.style.display = 'block';
             revealBtn.textContent = '🎁 Gift Reserved (demo)';
             startCountdown(reservation.expiresAt);
@@ -420,7 +417,6 @@
         }
       }
 
-      // Claim form submission
       claimForm.addEventListener('submit', async function(e){
         e.preventDefault();
         formFeedback.textContent = '';
@@ -433,7 +429,6 @@
           return;
         }
 
-        // collect data
         const payload = {
           revealToken: revealTokenInput.value,
           name: document.getElementById('name').value.trim(),
@@ -444,7 +439,6 @@
           campaign: 'christmas'
         };
 
-        // client validations
         if (!payload.name){ formFeedback.innerHTML = '<div class="error">Please enter your name.</div>'; return; }
         if (!validatePhone(payload.phone)){ formFeedback.innerHTML = '<div class="error">Enter a valid 10-digit mobile number (starts with 6-9).</div>'; return; }
         if (!validateKsebConsumer(payload.ksebConsumer)){ formFeedback.innerHTML = '<div class="error">Enter a valid KSEB Consumer Number (alphanumeric).</div>'; return; }
@@ -452,7 +446,6 @@
         if (!payload.location){ formFeedback.innerHTML = '<div class="error">Please enter your location (town / pincode).</div>'; return; }
         if (!document.getElementById('consent').checked){ formFeedback.innerHTML = '<div class="error">You must consent to be contacted about this offer.</div>'; return; }
 
-        // disable submit while sending
         submitBtn.disabled = true;
         submitBtn.textContent = '⏳ Submitting...';
 
@@ -464,23 +457,19 @@
           });
 
           if (!resp.ok) {
-            // try to parse error message
             let msg = 'Server error. Please try again.';
             try { const j = await resp.json(); if (j?.error) msg = j.error; } catch(e){}
             throw new Error(msg);
           }
           const data = await resp.json();
-          // Expected response: { success:true, message: "...", claimId: "..." }
           formFeedback.innerHTML = `<div class="success">✅ ${data.message ?? 'Claim submitted. We will contact you within 24 hours.'}</div>`;
           announce('Claim submitted successfully.');
-          // clear reservation locally to prevent re-submission
           reservation = null;
           revealTokenInput.value = '';
           revealResult.style.display = 'none';
           clearInterval(countdownTimer);
           revealBtn.disabled = false;
           revealBtn.textContent = '🎁 Unlock Your Gift';
-          // optionally reset form
           claimForm.reset();
         } catch(err){
           formFeedback.innerHTML = `<div class="error">${err.message}</div>`;
@@ -492,13 +481,11 @@
       // Attach reveal handler
       revealBtn.addEventListener('click', handleReveal);
 
-      // page init
+      // set year
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Accessibility: enable submit only when revealToken exists
-      const observer = new MutationObserver(()=>{
-        submitBtn.disabled = !revealTokenInput.value;
-      });
+      // accessibility: enable submit when token exists
+      const observer = new MutationObserver(()=>{ submitBtn.disabled = !revealTokenInput.value; });
       observer.observe(revealTokenInput, { attributes:true, childList:false, subtree:false });
 
     })();
