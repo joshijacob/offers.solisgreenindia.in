@@ -1,11 +1,51 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Christmas Offer — Claim ₹5,000 | Solis Green Energy</title>
-  <meta name="description" content="Unlock an instant ₹5,000 gift — fill the short form with mandatory KSEB details to claim. Limited time offer." />
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Christmas Offer — Unlock an instant ₹5,000 gift from Solis Green Energy. Submit mandatory KSEB Consumer No. & KSEB Reg. Phone to claim. Limited time offer." />
+  <meta name="keywords" content="christmas offer solar, solis green offer, solar cashback kerala, kseb claim, solar discount" />
+  <meta name="author" content="Solis Green Energy Solutions" />
+  <link rel="canonical" href="https://offers.solisgreenindia.in/christmas/" />
   <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Christmas Offer — Claim ₹5,000 | Solis Green Energy" />
+  <meta property="og:description" content="Unlock an instant ₹5,000 gift — fill the short form with mandatory KSEB details to claim. Limited time festive offer from Solis Green Energy Solutions." />
+  <meta property="og:url" content="https://offers.solisgreenindia.in/christmas/" />
+  <meta property="og:site_name" content="Solis Green Energy" />
+  <meta property="og:image" content="https://offers.solisgreenindia.in/christmas/assets/images/og-christmas.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Christmas Offer — Claim ₹5,000 | Solis Green Energy" />
+  <meta name="twitter:description" content="Unlock an instant ₹5,000 gift — fill the short form with mandatory KSEB details to claim." />
+  <meta name="twitter:image" content="https://offers.solisgreenindia.in/christmas/assets/images/og-christmas.jpg" />
+
+  <!-- Favicons (place these files under /christmas/assets/images/) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/christmas/assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/christmas/assets/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/christmas/assets/images/favicon-180.png">
+  <link rel="manifest" href="/christmas/manifest.webmanifest" />
+  <meta name="theme-color" content="#0f3f0f" />
+
+  <!-- Preload hero (optional if you add OG/hero images) -->
+  <link rel="preload" href="/christmas/assets/images/christmas-hero.webp" as="image" type="image/webp">
+
+  <!-- Google Tag Manager (same GTM container as main site) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id=GTM-5C2D5BG9'+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5C2D5BG9');</script>
+  <!-- End Google Tag Manager -->
+
   <style>
     :root{
       --green-700:#1f7a1f;
@@ -140,7 +180,7 @@
     /* aria-live */
     .sr-live{ position: absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 
-    footer p{ color:#e6f0e6; text-align:center; margin-top:20px; font-size:0.95rem; }
+    footer p{ color:#dfeee1; text-align:center; margin-top:20px; font-size:0.95rem; }
 
     /* tiny helpers */
     .row{ display:flex; gap:10px }
@@ -149,10 +189,15 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C2D5BG9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <div class="container" role="main">
     <header class="hero" role="banner" aria-labelledby="page-title">
       <h1 id="page-title">🎄 Christmas Offer — Unlock ₹5,000 Instantly</h1>
-      <p>Fill the short form with mandatory KSEB details to claim. Slot reserved for a short time — submit to confirm.</p>
+      <p>Fill the short form with mandatory KSEB Consumer No. & KSEB Reg. Phone to claim. Slot reserved for a short time — submit to confirm.</p>
     </header>
 
     <div style="height:18px"></div>
@@ -226,7 +271,7 @@
 
           <div class="terms" style="margin-top:6px">
             <input type="checkbox" id="consent" required />
-            <label for="consent" class="small-muted">I consent to be contacted about this offer and agree to the <a href="#" target="_blank">Terms & Privacy</a>.</label>
+            <label for="consent" class="small-muted">I consent to be contacted about this offer and agree to the <a href="https://solisgreenindia.in/privacy-policy" target="_blank" rel="noopener">Terms & Privacy</a>.</label>
           </div>
 
           <div id="formFeedback" aria-live="polite" style="min-height:1.5em"></div>
@@ -244,15 +289,14 @@
       <p>© <span id="year"></span> Solis Green Energy Solutions — offers.solisgreenindia.in</p>
     </footer>
 
-    <!-- live region for screen readers -->
     <div class="sr-live" id="liveRegion" aria-live="polite"></div>
   </div>
 
   <script>
     (function(){
       // ------- Configuration -------
-      const REVEAL_API = '/api/reveal'; // production: serverless endpoint
-      const CLAIM_API  = '/api/claim';  // production: serverless endpoint
+      const REVEAL_API = '/api/reveal'; // serverless endpoint (Vercel) - should be implemented server-side
+      const CLAIM_API  = '/api/claim';  // serverless endpoint (Vercel) - should be implemented server-side
       const DEFAULT_TTL_SECONDS = 600; // fallback TTL (10 minutes) used in demo mode
       const ALLOW_FALLBACK = true;     // if API not present, page works in demo mode
       // ------------------------------
@@ -462,3 +506,4 @@
   </script>
 </body>
 </html>
+```
