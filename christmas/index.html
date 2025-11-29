@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Christmas Offer — Claim ₹5,000 | Solis Green Energy</title>
+  <title>Win ₹25,000 Cashback + ₹5,000 Guaranteed | Solis Green Christmas Offer</title>
 
   <!-- Primary SEO -->
-  <meta name="description" content="Christmas Offer — Unlock an instant ₹5,000 gift from Solis Green Energy. Submit mandatory KSEB Consumer No. & KSEB Reg. Phone to claim. Limited time offer." />
-  <meta name="keywords" content="christmas offer solar, solis green offer, solar cashback kerala, kseb claim, solar discount" />
+  <meta name="description" content="Christmas Special: Win ₹25,000 Grand Cashback + ₹5,000 Guaranteed for all. Submit KSEB details to claim your festive solar bonus. Limited time offer!" />
+  <meta name="keywords" content="₹25000 solar offer, christmas cashback, solis green premium offer, solar bonus kerala, kseb cashback" />
   <meta name="author" content="Solis Green Energy Solutions" />
   <link rel="canonical" href="https://offers.solisgreenindia.in/christmas/" />
   <meta name="robots" content="index,follow" />
@@ -15,16 +15,16 @@
   <!-- Open Graph / Social -->
   <meta property="og:locale" content="en_IN" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Christmas Offer — Claim ₹5,000 | Solis Green Energy" />
-  <meta property="og:description" content="Unlock an instant ₹5,000 gift — fill the short form with mandatory KSEB details to claim. Limited time festive offer from Solis Green Energy Solutions." />
+  <meta property="og:title" content="Win ₹25,000 Cashback + ₹5,000 Guaranteed | Solis Green Christmas" />
+  <meta property="og:description" content="Grand Christmas Offer: ₹25,000 Cashback for milestone winners + ₹5,000 guaranteed for all. Limited slots available!" />
   <meta property="og:url" content="https://offers.solisgreenindia.in/christmas/" />
   <meta property="og:site_name" content="Solis Green Energy" />
   <meta property="og:image" content="https://offers.solisgreenindia.in/christmas/assets/images/og-christmas.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Christmas Offer — Claim ₹5,000 | Solis Green Energy" />
-  <meta name="twitter:description" content="Unlock an instant ₹5,000 gift — fill the short form with mandatory KSEB details to claim." />
+  <meta name="twitter:title" content="Win ₹25,000 Cashback + ₹5,000 Guaranteed | Solis Green Christmas" />
+  <meta name="twitter:description" content="Grand Christmas Offer: ₹25,000 Cashback + ₹5,000 guaranteed for all. Limited slots!" />
   <meta name="twitter:image" content="https://offers.solisgreenindia.in/christmas/assets/images/og-christmas.jpg" />
 
   <!-- Favicons -->
@@ -32,10 +32,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/christmas/assets/images/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/christmas/assets/images/favicon-180.png">
   <link rel="manifest" href="/christmas/manifest.webmanifest" />
-  <meta name="theme-color" content="#0f3f0f" />
-
-  <!-- Preload hero -->
-  <link rel="preload" href="/christmas/assets/images/christmas-hero.webp" as="image" type="image/webp">
+  <meta name="theme-color" content="#b8860b" />
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -46,157 +43,575 @@
 
   <style>
     :root{
-      --green-700:#1f7a1f;
-      --green-900:#0f3f0f;
-      --red-600:#c0392b;
-      --gold:#ffd700;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --max-width:980px;
-      --accent-dark: #071d13;
+      --gold-primary: #ffd700;
+      --gold-dark: #b8860b;
+      --gold-light: #ffed4e;
+      --gold-bg: #fff9e6;
+      --red-christmas: #c41e3a;
+      --red-dark: #8b0000;
+      --white: #ffffff;
+      --text-dark: #2c1810;
+      --text-muted: #8b7355;
+      --max-width: 980px;
     }
-    *{box-sizing:border-box}
+    
+    *{box-sizing:border-box; margin:0; padding:0;}
     html,body{height:100%}
     body{
       margin:0;
       font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans";
-      background: linear-gradient(180deg,#072214 0%, #0e3a12 60%);
-      color:#062018;
+      background: linear-gradient(135deg, #1a0f00 0%, #2c1810 50%, #1a0f00 100%);
+      color: var(--text-dark);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      padding:28px 16px;
+      padding:20px 16px;
+      position: relative;
+      overflow-x: hidden;
     }
-    .container{ max-width:var(--max-width); margin:0 auto; }
 
-    /* -------- Hero (UPDATED: centered, larger, shows ₹25,000) -------- */
+    /* Animated Golden Background */
+    .golden-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(255,215,0,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,215,0,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255,215,0,0.05) 0%, transparent 50%);
+      animation: goldenGlow 8s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    @keyframes goldenGlow {
+      0% { opacity: 0.3; }
+      100% { opacity: 0.7; }
+    }
+
+    .container{ max-width:var(--max-width); margin:0 auto; position: relative; z-index: 1; }
+
+    /* MAJOR HERO WITH ₹25,000 FOCUS */
     header.hero{
-      background: linear-gradient(135deg,var(--red-600),#8b0000);
-      color:var(--gold);
-      padding:28px 26px;
-      border-radius:14px;
-      box-shadow:0 12px 30px rgba(0,0,0,0.35);
+      background: linear-gradient(135deg, var(--red-christmas), var(--red-dark));
+      color: var(--gold-primary);
+      padding: 50px 30px;
+      border-radius: 20px;
+      box-shadow: 
+        0 20px 40px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255,215,0,0.3),
+        inset 0 1px 0 rgba(255,255,255,0.2);
       text-align:center;
       position:relative;
       overflow:hidden;
+      margin-bottom: 30px;
+      border: 2px solid var(--gold-primary);
     }
+
     .hero h1{
       margin:0;
-      font-size:clamp(26px,5.2vw,56px);
+      font-size:clamp(32px,6vw,64px);
       letter-spacing:-0.02em;
       font-weight:900;
-      color:#ffd84d;
-      text-shadow:0 3px 8px rgba(0,0,0,0.28);
-      line-height:1.02;
+      color: var(--gold-primary);
+      text-shadow: 
+        0 2px 4px rgba(0,0,0,0.5),
+        0 0 30px rgba(255,215,0,0.4);
+      line-height:1.1;
+      position: relative;
+      z-index: 2;
     }
+
+    .grand-prize-hero {
+      color: var(--gold-light);
+      text-shadow: 
+        0 0 30px rgba(255,215,0,0.8),
+        0 0 60px rgba(255,215,0,0.6),
+        3px 3px 0 rgba(0,0,0,0.3);
+      font-size: 1.2em;
+      animation: heroPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes heroPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
     .hero .sub{
-      margin-top:10px;
-      color:#ffefbf;
-      font-size:clamp(14px,2vw,20px);
+      margin-top:20px;
+      color: var(--gold-light);
+      font-size:clamp(18px,2.5vw,26px);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 2;
     }
+
     .hero .guarantee {
       display:block;
-      margin-top:10px;
-      color:#fff;
+      margin-top:15px;
+      color: var(--white);
       font-weight:800;
-      font-size:clamp(20px,3vw,28px);
+      font-size:clamp(24px,4vw,36px);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 2;
     }
 
-    /* shine sweep */
-    .shine-effect {
-      position:absolute; top:0; left:-150%; width:50%; height:100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
-      transform:skewX(-20deg); animation: shine 6s infinite ease-in-out; pointer-events:none;
-      filter: blur(6px); opacity:0.9;
+    /* DOMINANT GRAND PRIZE SECTION */
+    .grand-prize-dominant {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+      border: 4px solid var(--red-christmas);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      margin: 30px auto;
+      position: relative;
+      box-shadow: 
+        0 20px 40px rgba(0,0,0,0.4),
+        0 0 30px rgba(255,215,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.3);
+      overflow: hidden;
     }
-    @keyframes shine { 0%{ left:-150% } 60%{ left:150% } 100%{ left:150% } }
 
-    /* subtle snow overlay */
-    .snow {
-      position:absolute; inset:0; pointer-events:none; z-index:1; opacity:0.08;
-      background-image: radial-gradient(white 1.5px, transparent 5px);
-      background-size: 12px 12px;
-      animation: snowFall 30s linear infinite;
-      mix-blend-mode: screen;
+    .grand-prize-crown {
+      font-size: 3em;
+      margin-bottom: 15px;
+      animation: crownBounce 3s ease-in-out infinite;
     }
-    @keyframes snowFall { 0%{ transform: translateY(-8vh) } 100%{ transform: translateY(110vh) } }
 
-    /* layout */
-    .layout{ display:grid; grid-template-columns:1fr 420px; gap:22px; margin-top:20px; align-items:start; }
-    @media (max-width:880px){ .layout{ grid-template-columns:1fr } }
+    @keyframes crownBounce {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-10px) rotate(-5deg); }
+      75% { transform: translateY(-5px) rotate(5deg); }
+    }
 
-    /* cards */
+    .grand-prize-amount-dominant {
+      font-size: 4.5em;
+      font-weight: 900;
+      color: var(--red-christmas);
+      text-shadow: 
+        3px 3px 0 var(--gold-primary),
+        6px 6px 0 rgba(0,0,0,0.1);
+      margin: 10px 0;
+      animation: dominantPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes dominantPulse {
+      0%, 100% { 
+        transform: scale(1);
+        text-shadow: 3px 3px 0 var(--gold-primary), 6px 6px 0 rgba(0,0,0,0.1);
+      }
+      50% { 
+        transform: scale(1.08);
+        text-shadow: 4px 4px 0 var(--gold-primary), 8px 8px 0 rgba(0,0,0,0.15);
+      }
+    }
+
+    .grand-prize-subtitle {
+      font-size: 1.4em;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .prize-breakdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin: 25px 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .milestone {
+      background: rgba(255,255,255,0.9);
+      padding: 15px 10px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .milestone.highlight {
+      background: var(--red-christmas);
+      border-color: var(--gold-primary);
+      transform: scale(1.05);
+    }
+
+    .milestone.highlight .milestone-number,
+    .milestone.highlight .milestone-amount {
+      color: var(--gold-primary);
+    }
+
+    .milestone-number {
+      display: block;
+      font-size: 0.9em;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+
+    .milestone-amount {
+      display: block;
+      font-size: 1.2em;
+      font-weight: 800;
+      color: var(--red-christmas);
+    }
+
+    .grand-prize-note {
+      color: var(--text-dark);
+      font-size: 1.1em;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
+    /* Golden Shine Effect */
+    .golden-shine {
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:50%;
+      height:100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,215,0,0.4),
+        rgba(255,215,0,0.6),
+        rgba(255,215,0,0.4),
+        transparent
+      );
+      transform:skewX(-25deg);
+      animation: goldenShine 6s ease-in-out infinite;
+      pointer-events:none;
+      filter: blur(8px);
+    }
+
+    @keyframes goldenShine {
+      0% { left: -100%; }
+      20% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    /* Floating Golden Ornaments */
+    .ornament {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: var(--gold-primary);
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: float 6s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    .ornament::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 20px;
+      height: 20px;
+      background: var(--gold-light);
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    .ornament:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .ornament:nth-child(2) { top: 60%; left: 85%; animation-delay: 1s; }
+    .ornament:nth-child(3) { top: 80%; left: 15%; animation-delay: 2s; }
+    .ornament:nth-child(4) { top: 30%; left: 90%; animation-delay: 3s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+
+    /* Layout */
+    .layout{ 
+      display:grid; 
+      grid-template-columns:1fr 420px; 
+      gap:25px; 
+      margin-top:30px; 
+      align-items:start; 
+    }
+    
+    @media (max-width:880px){ 
+      .layout{ 
+        grid-template-columns:1fr; 
+        gap:20px; 
+      }
+      .prize-breakdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Cards with Golden Touch */
     .card{
-      background:var(--card);
-      padding:22px;
-      border-radius:12px;
-      box-shadow:0 8px 22px rgba(0,0,0,0.18);
+      background: linear-gradient(135deg, var(--white), var(--gold-bg));
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 
+        0 10px 30px rgba(0,0,0,0.2),
+        0 0 0 1px rgba(255,215,0,0.2);
       position:relative;
-      overflow:visible;
+      overflow: visible;
+      border: 1px solid rgba(255,215,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .prize-banner{
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 
+        0 15px 40px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,215,0,0.4);
+    }
+
+    /* Premium Prize Banner */
+    .premium-prize-banner {
       text-align:center;
-      border-radius:10px;
-      padding:18px;
-      background:linear-gradient(90deg,#fff7d6,#fff2b0);
-      border:3px solid rgba(200,80,50,0.14);
-      margin-bottom:16px;
-      transform:skewX(-1deg);
+      border-radius:15px;
+      padding:25px 20px;
+      background: linear-gradient(135deg, var(--red-christmas), var(--red-dark));
+      border: 3px solid var(--gold-primary);
+      margin-bottom:20px;
+      position: relative;
+      overflow: hidden;
+      color: var(--gold-primary);
     }
-    .prize-amount{ font-size:36px; font-weight:900; color:var(--red-600); text-shadow:0 3px 0 rgba(0,0,0,0.06); }
-    .muted{ color:var(--muted); font-size:0.95rem; }
 
-    .reveal-area{ display:flex; gap:12px; align-items:center; justify-content:center; margin:16px 0 8px; flex-wrap:wrap; }
+    .premium-badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold-primary);
+      color: var(--red-christmas);
+      padding: 5px 20px;
+      border-radius: 15px;
+      font-weight: 800;
+      font-size: 0.9em;
+    }
+
+    .premium-amount {
+      font-size: 3em;
+      font-weight: 900;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+      margin: 10px 0;
+    }
+
+    .premium-description {
+      font-size: 1.2em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .base-amount {
+      font-size: 1.1em;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .muted{ color: var(--text-muted); font-size:0.95rem; }
+
+    .reveal-area{ 
+      display:flex; 
+      gap:15px; 
+      align-items:center; 
+      justify-content:center; 
+      margin:20px 0 15px; 
+      flex-wrap:wrap; 
+    }
+    
     .reveal-btn{
-      background:linear-gradient(180deg,var(--green-700),var(--green-900));
-      color:#fff; border:none; border-radius:999px; padding:14px 26px; font-weight:800;
-      cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.18); transition:transform .14s ease,opacity .14s ease;
-      font-size:1rem;
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: var(--text-dark);
+      border: none;
+      border-radius: 50px;
+      padding: 16px 32px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 
+        0 8px 20px rgba(0,0,0,0.3),
+        0 0 0 2px rgba(255,215,0,0.5);
+      transition: all 0.3s ease;
+      font-size:1.1rem;
+      position: relative;
+      overflow: hidden;
     }
-    .reveal-btn[disabled]{ opacity:.6; cursor:not-allowed; transform:none; }
 
-    .info{ text-align:center; font-size:0.96rem; color:#0f2a18; }
+    .reveal-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s ease;
+    }
 
-    /* right column form */
-    form.claim-form{ display:flex; flex-direction:column; gap:12px; }
-    .form-title{ font-size:1.15rem; font-weight:700; color:var(--green-900); margin-bottom:6px; }
-    label.small{ font-size:0.95rem; display:block; margin-bottom:6px; font-weight:600; color:#123a12; }
+    .reveal-btn:hover::before {
+      left: 100%;
+    }
+
+    .reveal-btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 
+        0 12px 25px rgba(0,0,0,0.4),
+        0 0 0 2px rgba(255,215,0,0.8);
+    }
+
+    .reveal-btn[disabled]{ 
+      opacity:.6; 
+      cursor:not-allowed; 
+      transform:none; 
+    }
+
+    .info{ text-align:center; font-size:0.96rem; color: var(--text-muted); }
+
+    /* Form Styles */
+    form.claim-form{ display:flex; flex-direction:column; gap:15px; }
+    .form-title{ 
+      font-size:1.3rem; 
+      font-weight:700; 
+      color: var(--text-dark); 
+      margin-bottom:10px;
+      text-align: center;
+    }
+    
+    label.small{ 
+      font-size:0.95rem; 
+      display:block; 
+      margin-bottom:8px; 
+      font-weight:600; 
+      color: var(--text-dark);
+    }
+    
     input[type="text"], input[type="tel"], input[type="email"]{
-      padding:12px 14px; border-radius:10px; border:1px solid #e6e6e6; font-size:1rem; width:100%;
+      padding:14px 16px;
+      border-radius:10px;
+      border: 2px solid rgba(255,215,0,0.3);
+      font-size:1rem;
+      width:100%;
+      background: var(--white);
+      transition: all 0.3s ease;
     }
-    input:focus{ outline:3px solid rgba(31,122,31,0.12); border-color:var(--green-700); }
+    
+    input:focus{
+      outline:none;
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px rgba(255,215,0,0.2);
+      background: var(--gold-bg);
+    }
+    
     .submit-btn{
-      background: linear-gradient(180deg,var(--green-900),var(--green-700));
-      color:#fff; border:0; padding:14px 18px; border-radius:10px; font-weight:800; cursor:pointer; font-size:1rem;
+      background: linear-gradient(135deg, var(--red-christmas), var(--red-dark));
+      color: var(--gold-primary);
+      border: 0;
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      font-size:1.1rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      margin-top: 10px;
     }
-    .submit-btn[disabled]{ opacity:.6; cursor:not-allowed; }
+    
+    .submit-btn:hover:not([disabled]){
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+    
+    .submit-btn[disabled]{ 
+      opacity:.6; 
+      cursor:not-allowed;
+      transform: none;
+    }
 
-    .terms{ display:flex; gap:8px; align-items:center; font-size:0.92rem; color:#3a463a; }
-    .countdown{ font-weight:800; color:var(--red-600); }
+    .terms{ 
+      display:flex; 
+      gap:10px; 
+      align-items:flex-start; 
+      font-size:0.92rem; 
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+    
+    .countdown{ 
+      font-weight:800; 
+      color: var(--red-christmas);
+      font-size: 1.1em;
+    }
 
-    /* small SR live */
+    /* Animated Snow */
+    .snow-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .snowflake {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    /* Footer */
+    footer{ 
+      text-align:center; 
+      color: var(--gold-light);
+      margin-top: 40px;
+      padding: 20px;
+      border-top: 1px solid rgba(255,215,0,0.2);
+    }
+
+    footer p{ 
+      font-size:0.95rem;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* Utility Classes */
+    .error{ color: #dc2626; font-size:0.9rem; font-weight: 600; }
+    .success{ color: #16a34a; font-size:0.96rem; font-weight: 600; }
     .sr-live{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 
-    footer p{ color:#dfeee1; text-align:center; margin-top:20px; font-size:0.95rem; }
+    /* Responsive */
+    @media (max-width:768px){
+      body{ padding:15px 12px; }
+      .hero{ padding: 30px 20px; }
+      .hero h1{ font-size:32px; }
+      .layout{ grid-template-columns:1fr; gap: 20px; }
+      .grand-prize-amount-dominant { font-size: 3.5em; }
+      .grand-prize-dominant { padding: 30px 20px; }
+      .card{ padding: 20px; }
+      .premium-amount { font-size: 2.5em; }
+    }
 
-    /* contact / helper */
-    .row{ display:flex; gap:10px }
-    .error{ color:#b91c1c; font-size:0.9rem; }
-    .success{ color:#0a7a23; font-size:0.96rem; }
-
-    /* small gift ribbon on card */
-    .gift-ribbon{ position:absolute; left:18px; top:-28px; width:96px; height:96px; display:flex; align-items:center; justify-content:center; transform: rotate(-8deg); pointer-events:none; z-index:6; }
-    .gift-box{ width:64px; height:64px; border-radius:10px; background: linear-gradient(180deg,#ffefdd,#ffd7b0); display:flex; align-items:center; justify-content:center; font-size:28px; box-shadow:0 12px 30px rgba(200,40,40,0.14); animation: gift-bounce 3.2s ease-in-out infinite; }
-    @keyframes gift-bounce{ 0%{ transform: translateY(0) } 40%{ transform: translateY(-10px) rotate(-4deg) } 70%{ transform: translateY(-6px) rotate(-2deg) } 100%{ transform: translateY(0) } }
-    .ribbon-left, .ribbon-right{ position:absolute; bottom:6px; width:16px; height:36px; background: linear-gradient(180deg,#c92b2b,#b01818); border-radius:3px; transform-origin: top center; }
-    .ribbon-left{ left:4px; transform: rotate(-20deg); } .ribbon-right{ right:4px; transform: rotate(20deg); }
-
-    /* small responsiveness */
-    @media (max-width:720px){
-      body{ padding:18px 12px; }
+    @media (max-width:480px){
+      .hero{ padding: 25px 15px; }
       .hero h1{ font-size:28px; }
-      .layout{ grid-template-columns:1fr; }
-      .gift-ribbon{ display:none; }
+      .grand-prize-dominant{ padding: 25px 15px; }
+      .grand-prize-amount-dominant { font-size: 3em; }
+      .prize-breakdown {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -205,115 +620,188 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C2D5BG9"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="container" role="main">
-    <!-- HERO: centered, larger, shows ₹25,000 and ₹5,000 guarantee -->
-    <header class="hero" role="banner" aria-labelledby="page-title">
-      <h1 id="page-title">🎄 Christmas Special — Chance to Win <span style="color:#fff;">₹25,000</span> 🎁</h1>
-      <p class="sub">Every new registered customer receives an <strong class="guarantee">₹5,000 Guaranteed Cashback</strong></p>
-      <p class="sub" style="margin-top:8px">Submit mandatory <em>KSEB Consumer No.</em> & <em>KSEB Registered Phone</em> to claim. Limited time festive offer — confirm your slot now.</p>
+  <!-- Golden Background -->
+  <div class="golden-bg"></div>
 
-      <div class="shine-effect" aria-hidden="true"></div>
-      <div class="snow" aria-hidden="true"></div>
+  <!-- Animated Snow -->
+  <div class="snow-container" id="snowContainer"></div>
+
+  <div class="container" role="main">
+    <!-- MAJOR HERO WITH ₹25,000 FOCUS -->
+    <header class="hero" role="banner" aria-labelledby="page-title">
+      <!-- Floating Ornaments -->
+      <div class="ornament"></div>
+      <div class="ornament"></div>
+      <div class="ornament"></div>
+      <div class="ornament"></div>
+      
+      <h1 id="page-title">🎄 WIN <span class="grand-prize-hero">₹25,000</span> CASHBACK 🎄</h1>
+      <p class="sub">Grand Christmas Bonus + <strong class="guarantee">₹5,000 Guaranteed for Everyone</strong></p>
+      <p class="sub" style="margin-top:12px">Limited slots available for our premium ₹25,000 offer!</p>
+
+      <div class="golden-shine" aria-hidden="true"></div>
     </header>
 
-    <div style="height:18px"></div>
+    <!-- DOMINANT GRAND PRIZE SECTION -->
+    <div class="grand-prize-dominant">
+      <div class="grand-prize-crown">👑</div>
+      <div class="grand-prize-amount-dominant">₹25,000/-</div>
+      <div class="grand-prize-subtitle">GRAND CHRISTMAS BONUS</div>
+      <div class="prize-breakdown">
+        <div class="milestone">
+          <span class="milestone-number">10th Submission</span>
+          <span class="milestone-amount">₹10,000</span>
+        </div>
+        <div class="milestone">
+          <span class="milestone-number">25th Submission</span>
+          <span class="milestone-amount">₹15,000</span>
+        </div>
+        <div class="milestone">
+          <span class="milestone-number">40th Submission</span>
+          <span class="milestone-amount">₹20,000</span>
+        </div>
+        <div class="milestone highlight">
+          <span class="milestone-number">75th Submission</span>
+          <span class="milestone-amount">₹25,000</span>
+        </div>
+      </div>
+      <p class="grand-prize-note">Every submission gets ₹5,000 + chance to win milestone bonuses!</p>
+    </div>
 
     <div class="layout" aria-live="polite">
-      <!-- Left column: explanation + reveal -->
+      <!-- Left Column: Premium Offer Focus -->
       <section class="card" aria-labelledby="prize-heading">
-        <h2 id="prize-heading" class="muted" style="margin:0 0 8px">How it works</h2>
+        <h2 id="prize-heading" style="margin:0 0 15px; color:var(--text-dark); font-size:1.4em;">
+          🏆 Your Chance to Win ₹25,000
+        </h2>
 
-        <div class="prize-banner" role="region" aria-live="polite" aria-atomic="true">
-          <div style="font-size:0.95rem; font-weight:800; color:#4b3b00">INSTANT GIFT</div>
-          <div class="prize-amount">₹5,000</div>
-          <div class="muted">Payable to every <strong>confirmed</strong> customer after verification & commissioning</div>
-          <div style="margin-top:8px; font-size:0.95rem; color:#4b3b00">Grand prize: chance to win <strong style="color:#b21b1b">₹25,000</strong></div>
+        <div class="premium-prize-banner">
+          <div class="premium-badge">PREMIUM OFFER</div>
+          <div class="premium-amount">₹25,000</div>
+          <div class="premium-description">Grand Christmas Cashback</div>
+          <div class="base-amount">+ ₹5,000 Guaranteed for All</div>
         </div>
 
-        <p class="info muted">Click <strong>Unlock Your Gift</strong> to reserve a slot for <strong>10 minutes</strong>. You must submit the claim form (mandatory KSEB Consumer No. & KSEB Reg. Phone) before the timer ends — otherwise the slot is released.</p>
+        <p class="info">This Christmas, we're rewarding our customers with <strong>massive cashbacks</strong>! While everyone gets ₹5,000, selected customers have the chance to win up to ₹25,000 through our milestone bonus system.</p>
 
         <div class="reveal-area">
-          <button id="revealBtn" class="reveal-btn" aria-describedby="reveal-desc">🎁 Unlock Your Gift</button>
+          <button id="revealBtn" class="reveal-btn" aria-describedby="reveal-desc">
+            ✨ Unlock Your Golden Gift
+          </button>
         </div>
 
-        <p id="reveal-desc" class="muted-note" style="text-align:center">One reveal per person. Duplicate or fraudulent claims may be rejected.</p>
+        <p id="reveal-desc" class="muted" style="text-align:center">Check your gift amount and reserve your slot for this exclusive offer!</p>
 
-        <div id="revealResult" style="margin-top:14px;display:none">
+        <div id="revealResult" style="margin-top:20px;display:none">
           <p class="success" id="revealMessage"></p>
-          <p class="small-muted" style="text-align:center">Reservation expires in <span id="countdown" class="countdown">--:--</span></p>
+          <p class="muted" style="text-align:center; margin-top:10px;">
+            ⏰ Reservation expires in: <span id="countdown" class="countdown">--:--</span>
+          </p>
         </div>
 
-        <div id="revealErrors" style="margin-top:12px"></div>
+        <div id="revealErrors" style="margin-top:15px"></div>
 
-        <hr style="margin:18px 0; border:none; border-top:1px solid #f2f2f2" />
+        <hr style="margin:20px 0; border:none; border-top:2px dashed rgba(255,215,0,0.3)" />
 
-        <div><p class="muted-note"><strong>Important:</strong> Payment of ₹5,000 is processed only after verification and commissioning. We will contact you on the phone number you provide.</p></div>
+        <div>
+          <p class="muted" style="font-size:0.9rem;">
+            <strong>🎯 How it works:</strong> Every 10th, 25th, 40th, and 75th submission wins special bonuses on top of the guaranteed ₹5,000. Your submission brings you closer to these milestone rewards!
+          </p>
+        </div>
       </section>
 
-      <!-- Right column: form -->
+      <!-- Right Column: Claim Form -->
       <aside class="card" aria-labelledby="form-heading">
-        <h3 id="form-heading" class="form-title">Claim Form</h3>
+        <h3 id="form-heading" class="form-title">Claim Your Premium Offer</h3>
 
         <form id="claimForm" class="claim-form" autocomplete="off" novalidate>
           <input type="hidden" id="revealToken" name="revealToken" />
 
           <div>
             <label class="small" for="name">Customer Name *</label>
-            <input type="text" id="name" name="name" maxlength="100" required />
+            <input type="text" id="name" name="name" maxlength="100" required placeholder="Enter your full name" />
           </div>
 
           <div>
-            <label class="small" for="phone">Contact Number (10 digits) *</label>
-            <input type="tel" id="phone" name="phone" inputmode="numeric" placeholder="e.g. 9XXXXXXXXX" required />
+            <label class="small" for="phone">Contact Number *</label>
+            <input type="tel" id="phone" name="phone" inputmode="numeric" placeholder="10-digit mobile number" required />
           </div>
 
           <div>
             <label class="small" for="ksebConsumer">KSEB Consumer Number *</label>
-            <input type="text" id="ksebConsumer" name="ksebConsumer" placeholder="Enter your KSEB consumer number" required />
+            <input type="text" id="ksebConsumer" name="ksebConsumer" placeholder="Your KSEB account number" required />
           </div>
 
           <div>
-            <label class="small" for="ksebPhone">KSEB Registered Phone Number *</label>
-            <input type="tel" id="ksebPhone" name="ksebPhone" inputmode="numeric" placeholder="KSEB registered phone" required />
+            <label class="small" for="ksebPhone">KSEB Registered Phone *</label>
+            <input type="tel" id="ksebPhone" name="ksebPhone" inputmode="numeric" placeholder="KSEB registered number" required />
           </div>
 
           <div>
-            <label class="small" for="location">Location (Town / Pincode) *</label>
-            <input type="text" id="location" name="location" required placeholder="Eg: Thiruvalla, 689101" />
+            <label class="small" for="location">Location *</label>
+            <input type="text" id="location" name="location" required placeholder="Town/City and Pincode" />
           </div>
 
-          <div class="terms" style="margin-top:6px">
+          <div class="terms">
             <input type="checkbox" id="consent" required />
-            <label for="consent" class="small-muted">I consent to be contacted about this offer and agree to the <a href="https://solisgreenindia.in/privacy-policy" target="_blank" rel="noopener">Terms & Privacy</a>.</label>
+            <label for="consent" class="muted">
+              I agree to be contacted about this premium offer and accept the 
+              <a href="https://solisgreenindia.in/privacy-policy" target="_blank" rel="noopener" style="color:var(--gold-dark);">Terms & Privacy Policy</a>
+            </label>
           </div>
 
-          <div id="formFeedback" aria-live="polite" style="min-height:1.5em"></div>
+          <div id="formFeedback" aria-live="polite" style="min-height:1.5em; margin-top:10px;"></div>
 
-          <button id="submitBtn" class="submit-btn" type="submit" disabled>Claim ₹5,000 & Get Free Consultation</button>
+          <button id="submitBtn" class="submit-btn" type="submit" disabled>
+            🎄 Claim My Premium Offer
+          </button>
 
-          <p class="small-muted" style="margin-top:8px">If you do not have the reveal slot, click "Unlock Your Gift" first.</p>
+          <p class="muted" style="margin-top:12px; font-size:0.9rem; text-align:center;">
+            Unlock your gift first to see if you qualify for premium bonuses!
+          </p>
         </form>
       </aside>
     </div>
 
-    <div style="height:18px"></div>
-
-    <footer style="text-align:center; color:#dfeee1;">
-      <p>© <span id="year"></span> Solis Green Energy Solutions — offers.solisgreenindia.in</p>
+    <footer>
+      <p>© <span id="year"></span> Solis Green Energy Solutions — Premium Christmas Offer</p>
+      <p style="margin-top:8px; font-size:0.85rem; opacity:0.8;">₹25,000 Grand Prize + ₹5,000 Guaranteed | offers.solisgreenindia.in</p>
     </footer>
 
     <div class="sr-live" id="liveRegion" aria-live="polite"></div>
   </div>
 
-  <!-- JS: reveal + claim logic + small decorative sparkle canvas -->
+  <!-- JavaScript with Snow Animation -->
   <script>
+    // Create snowflakes
+    function createSnow() {
+      const container = document.getElementById('snowContainer');
+      const snowflakeCount = 50;
+      
+      for (let i = 0; i < snowflakeCount; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.className = 'snowflake';
+        
+        const size = Math.random() * 5 + 2;
+        const left = Math.random() * 100;
+        const duration = Math.random() * 10 + 5;
+        const delay = Math.random() * 5;
+        
+        snowflake.style.width = `${size}px`;
+        snowflake.style.height = `${size}px`;
+        snowflake.style.left = `${left}vw`;
+        snowflake.style.animationDuration = `${duration}s`;
+        snowflake.style.animationDelay = `${delay}s`;
+        
+        container.appendChild(snowflake);
+      }
+    }
+
+    // Your existing JavaScript functionality
     (function(){
-      // ------- Configuration -------
-      const REVEAL_API = '/christmas/api/reveal'; // adjust if your API path differs
-      const CLAIM_API  = '/christmas/api/claim';  // adjust if your API path differs
-      const DEFAULT_TTL_SECONDS = 600; // fallback TTL (10 minutes) used in demo mode
-      const ALLOW_FALLBACK = true;     // if API not present, page works in demo mode
-      // ------------------------------
+      const REVEAL_API = '/api/reveal';
+      const CLAIM_API  = '/api/claim';
+      const DEFAULT_TTL_SECONDS = 600;
 
       // Elements
       const revealBtn = document.getElementById('revealBtn');
@@ -328,7 +816,7 @@
       const formFeedback = document.getElementById('formFeedback');
       const liveRegion = document.getElementById('liveRegion');
 
-      let reservation = null; // { token, expiresAt (ms), prize }
+      let reservation = null;
       let countdownTimer = null;
 
       function formatSeconds(s){
@@ -361,69 +849,82 @@
       function onReservationExpired(){
         reservation = null;
         revealResult.style.display = 'none';
-        revealErrors.innerHTML = '<div class="error">⏳ Your reservation expired. Please click "Unlock Your Gift" again to try.</div>';
+        revealErrors.innerHTML = '<div class="error">⏳ Reservation expired. Click the golden button to try again.</div>';
         revealBtn.disabled = false;
-        revealBtn.textContent = '🎁 Unlock Your Gift';
+        revealBtn.textContent = '✨ Unlock Your Golden Gift';
         revealTokenInput.value = '';
         submitBtn.disabled = true;
         announce('Reservation expired');
       }
 
-      function validatePhone(v){ return /^[6-9]\d{9}$/.test(v.trim()); }
-      function validateKsebConsumer(v){ return /^[A-Za-z0-9\-]{5,20}$/.test(v.trim()); }
+      function validatePhone(v){ 
+        const cleaned = v.replace(/\D/g, '');
+        return /^[6-9]\d{9}$/.test(cleaned); 
+      }
+      
+      function validateKsebConsumer(v){ 
+        return /^[A-Za-z0-9\-]{5,20}$/.test(v.trim()); 
+      }
 
       async function handleReveal(){
         revealErrors.innerHTML = '';
         revealBtn.disabled = true;
-        revealBtn.textContent = '🎅 Checking your gift...';
+        revealBtn.textContent = '🎅 Checking your premium offer...';
 
         try {
-          const resp = await fetch(REVEAL_API, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ campaign: 'christmas' }) });
+          const resp = await fetch(REVEAL_API, { 
+            method: 'POST', 
+            headers: { 'Content-Type': 'application/json' }, 
+            body: JSON.stringify({ campaign: 'christmas' }) 
+          });
+          
           if (!resp.ok) throw new Error('Server returned ' + resp.status);
+          
           const data = await resp.json();
-          // expected: { prize:5000, revealToken: "...", expiresIn: 600 }
+          
+          if (!data.success) {
+            throw new Error(data.error || 'Failed to reveal gift');
+          }
+
           const prize = data.prize ?? 5000;
-          const token = data.revealToken ?? data.token ?? null;
-          const ttl = parseInt(data.expiresIn ?? data.ttl ?? DEFAULT_TTL_SECONDS, 10);
+          const token = data.revealToken;
+          const ttl = parseInt(data.expiresIn ?? DEFAULT_TTL_SECONDS, 10);
 
           if (!token) throw new Error('Missing reveal token from server.');
 
           reservation = { token, prize, expiresAt: Date.now() + (ttl * 1000) };
           revealTokenInput.value = token;
-          revealMessage.textContent = `🎉 You unlocked ₹${prize.toLocaleString()} — fill the form to claim within the time limit.`;
+          
+          if (prize > 5000) {
+            revealMessage.textContent = `🎉 PREMIUM BONUS! You unlocked ₹${prize.toLocaleString()} — You're in the running for our grand prizes!`;
+          } else {
+            revealMessage.textContent = `🎉 You unlocked ₹${prize.toLocaleString()} — Complete the form to claim your gift!`;
+          }
+          
           revealResult.style.display = 'block';
           revealErrors.innerHTML = '';
-          revealBtn.textContent = '🎁 Gift Reserved';
+          revealBtn.textContent = '⭐ Premium Offer Reserved';
           startCountdown(reservation.expiresAt);
           submitBtn.disabled = false;
-          announce('Gift reserved. Form is available.');
+          announce('Premium offer reserved! Form is now available.');
         } catch(err){
           console.warn('Reveal API failed:', err);
-          if (ALLOW_FALLBACK){
-            const demoToken = 'demo-' + Math.random().toString(36).slice(2,12);
-            reservation = { token: demoToken, prize: 5000, expiresAt: Date.now() + DEFAULT_TTL_SECONDS*1000 };
-            revealTokenInput.value = demoToken;
-            revealMessage.textContent = `🎉 Demo: You unlocked ₹${reservation.prize.toLocaleString()}. This is a local demo reservation — integrate server APIs for production.`;
-            revealResult.style.display = 'block';
-            revealBtn.textContent = '🎁 Gift Reserved (demo)';
-            startCountdown(reservation.expiresAt);
-            submitBtn.disabled = false;
-            announce('Demo gift reserved. Form is available.');
-          } else {
-            revealErrors.innerHTML = '<div class="error">Unable to reserve gift right now. Please try again later.</div>';
-            revealBtn.disabled = false;
-            revealBtn.textContent = '🎁 Unlock Your Gift';
-          }
+          revealErrors.innerHTML = `<div class="error">${err.message || 'Unable to connect. Please try again in a moment.'}</div>`;
+          revealBtn.disabled = false;
+          revealBtn.textContent = '✨ Unlock Your Golden Gift';
         }
       }
 
+      // Form submission handler
       claimForm.addEventListener('submit', async function(e){
         e.preventDefault();
         formFeedback.textContent = '';
+        
         if (!reservation){
-          formFeedback.innerHTML = '<div class="error">You need to reserve a slot first — click "Unlock Your Gift".</div>';
+          formFeedback.innerHTML = '<div class="error">Please unlock your premium offer first by clicking the golden button.</div>';
           return;
         }
+        
         if (Date.now() > reservation.expiresAt){
           onReservationExpired();
           return;
@@ -439,55 +940,101 @@
           campaign: 'christmas'
         };
 
-        if (!payload.name){ formFeedback.innerHTML = '<div class="error">Please enter your name.</div>'; return; }
-        if (!validatePhone(payload.phone)){ formFeedback.innerHTML = '<div class="error">Enter a valid 10-digit mobile number (starts with 6-9).</div>'; return; }
-        if (!validateKsebConsumer(payload.ksebConsumer)){ formFeedback.innerHTML = '<div class="error">Enter a valid KSEB Consumer Number (alphanumeric).</div>'; return; }
-        if (!validatePhone(payload.ksebPhone)){ formFeedback.innerHTML = '<div class="error">Enter a valid KSEB registered phone (10 digits).</div>'; return; }
-        if (!payload.location){ formFeedback.innerHTML = '<div class="error">Please enter your location (town / pincode).</div>'; return; }
-        if (!document.getElementById('consent').checked){ formFeedback.innerHTML = '<div class="error">You must consent to be contacted about this offer.</div>'; return; }
+        // Validation
+        if (!payload.name){ 
+          formFeedback.innerHTML = '<div class="error">Please enter your name.</div>'; 
+          return; 
+        }
+        
+        if (!validatePhone(payload.phone)){ 
+          formFeedback.innerHTML = '<div class="error">Enter a valid 10-digit mobile number (starts with 6-9).</div>'; 
+          return; 
+        }
+        
+        if (!validateKsebConsumer(payload.ksebConsumer)){ 
+          formFeedback.innerHTML = '<div class="error">Enter a valid KSEB Consumer Number (alphanumeric, 5-20 characters).</div>'; 
+          return; 
+        }
+        
+        if (!validatePhone(payload.ksebPhone)){ 
+          formFeedback.innerHTML = '<div class="error">Enter a valid KSEB registered phone (10 digits).</div>'; 
+          return; 
+        }
+        
+        if (!payload.location){ 
+          formFeedback.innerHTML = '<div class="error">Please enter your location (town / pincode).</div>'; 
+          return; 
+        }
+        
+        if (!document.getElementById('consent').checked){ 
+          formFeedback.innerHTML = '<div class="error">You must agree to the terms to continue.</div>'; 
+          return; 
+        }
 
         submitBtn.disabled = true;
-        submitBtn.textContent = '⏳ Submitting...';
+        submitBtn.textContent = '⏳ Submitting your premium claim...';
 
         try {
           const resp = await fetch(CLAIM_API, {
-            method:'POST',
-            headers:{ 'Content-Type':'application/json' },
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
           });
 
           if (!resp.ok) {
             let msg = 'Server error. Please try again.';
-            try { const j = await resp.json(); if (j?.error) msg = j.error; } catch(e){}
+            try { 
+              const errorData = await resp.json(); 
+              if (errorData?.error) msg = errorData.error; 
+            } catch(e){}
             throw new Error(msg);
           }
+          
           const data = await resp.json();
-          formFeedback.innerHTML = `<div class="success">✅ ${data.message ?? 'Claim submitted. We will contact you within 24 hours.'}</div>`;
-          announce('Claim submitted successfully.');
+          
+          if (!data.success) {
+            throw new Error(data.error || 'Claim submission failed');
+          }
+
+          const successMessage = reservation.prize > 5000 
+            ? `✅ PREMIUM CLAIM SUBMITTED! You're in for ₹${reservation.prize.toLocaleString()}! We'll contact you within 24 hours.`
+            : `✅ Claim submitted successfully! You get ₹5,000 + chance to win premium bonuses. We'll contact you within 24 hours.`;
+            
+          formFeedback.innerHTML = `<div class="success">${successMessage}</div>`;
+          announce('Premium claim submitted successfully!');
+          
+          // Reset form
           reservation = null;
           revealTokenInput.value = '';
           revealResult.style.display = 'none';
           clearInterval(countdownTimer);
           revealBtn.disabled = false;
-          revealBtn.textContent = '🎁 Unlock Your Gift';
+          revealBtn.textContent = '✨ Unlock Your Golden Gift';
           claimForm.reset();
+          submitBtn.disabled = true;
+          
         } catch(err){
           formFeedback.innerHTML = `<div class="error">${err.message}</div>`;
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Claim ₹5,000 & Get Free Consultation';
+          submitBtn.textContent = '🎄 Claim My Premium Offer';
         }
       });
 
-      // Attach reveal handler
+      // Initialize
       revealBtn.addEventListener('click', handleReveal);
-
-      // set year
       document.getElementById('year').textContent = new Date().getFullYear();
+      
+      const observer = new MutationObserver(() => { 
+        submitBtn.disabled = !revealTokenInput.value; 
+      });
+      observer.observe(revealTokenInput, { 
+        attributes: true, 
+        childList: false, 
+        subtree: false 
+      });
 
-      // accessibility: enable submit when token exists
-      const observer = new MutationObserver(()=>{ submitBtn.disabled = !revealTokenInput.value; });
-      observer.observe(revealTokenInput, { attributes:true, childList:false, subtree:false });
-
+      // Create snow on load
+      createSnow();
     })();
   </script>
 </body>
