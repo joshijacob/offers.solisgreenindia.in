@@ -3,74 +3,105 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Seasonal Offers | Solis Green Energy</title>
-  <meta name="description" content="Seasonal offers and cashback campaigns from Solis Green Energy. Click an offer to view details and claim your gift." />
+  <title>Seasonal Offers | Solis Green India</title>
+
+  <meta name="description" content="Seasonal offers and festive cashback campaigns from Solis Green India. Enjoy special Christmas and New Year solar rewards." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://offers.solisgreenindia.in/" />
+  <link rel="canonical" href="https://offers.solisgreenindia.in/"/>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Seasonal Offers | Solis Green Energy" />
-  <meta property="og:description" content="Seasonal offers and cashback campaigns from Solis Green Energy. Click an offer to view details and claim your gift." />
-  <meta property="og:url" content="https://offers.solisgreenindia.in/" />
-  <meta property="og:image" content="https://offers.solisgreenindia.in/assets/images/og-offers.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:title" content="Seasonal Offers | Solis Green India"/>
+  <meta property="og:description" content="Exclusive festive solar offers including Christmas, New Year and seasonal rewards. Claim your instant gifts."/>
+  <meta property="og:image" content="/assets/images/og-offers.jpg"/>
+  <meta property="og:url" content="https://offers.solisgreenindia.in/"/>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/christmas/assets/images/favicon-32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/christmas/assets/images/favicon-180.png" />
-
-  <!-- Shared styles -->
-  <link rel="stylesheet" href="/assets/css/offers.css">
-
-  <!-- GTM (already present on main site) - not injected here; dataLayer pushes handled by offers.js -->
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/offers.css"/>
 </head>
+
 <body>
-  <main class="offers-hero" role="main">
-    <header class="offers-header container">
-      <a class="brand" href="https://solisgreenindia.in" target="_blank" rel="noopener">
-        <img src="/images/logo/logo.png" alt="Solis Green India" class="brand-logo" />
-      </a>
-      <h1 class="offers-title">Seasonal Offers</h1>
-      <p class="offers-sub">Limited-time cashback and festive rewards. Click an offer to view details and claim.</p>
-    </header>
 
-    <section class="offers-list container" aria-label="Active offers">
-      <article class="offer-card highlight" data-offer="christmas" tabindex="0" role="link" aria-label="Christmas Offer — Click to open">
-        <div class="card-badge">Popular</div>
-        <h2>🎄 Christmas Offer</h2>
-        <p class="card-desc">Instant ₹5,000 gift on confirmation. Mandatory KSEB details required. Limited slots.</p>
-        <div class="card-actions">
-          <a href="/christmas/" class="btn btn-primary offer-cta" data-offer="christmas">View Offer</a>
-        </div>
-      </article>
+  <!-- ================= HEADER ================= -->
+  <header class="offers-header container">
+    <a class="brand" href="https://solisgreenindia.in" rel="noopener">
+      <img src="/images/logo/logo.png" alt="Solis Green India" class="brand-logo"/>
+      <span class="brand-text">Solis Green India</span>
+    </a>
 
-      <article class="offer-card" data-offer="newyear" tabindex="0" role="link" aria-label="New Year Offer — Coming soon">
-        <h2>🎉 New Year Offer</h2>
-        <p class="card-desc">Coming soon — Special discounts for early bookings.</p>
-        <div class="card-actions">
-          <a href="#" class="btn btn-outline disabled">Coming Soon</a>
-        </div>
-      </article>
+    <h1 class="offers-title">Seasonal Offers</h1>
+    <p class="offers-sub">Exclusive festive rewards and limited-period cashback programs.</p>
+  </header>
 
-      <article class="offer-card" data-offer="summer" tabindex="0" role="link" aria-label="Summer Offer — Coming soon">
-        <h2>☀️ Summer Offer</h2>
-        <p class="card-desc">Coming soon — Summer savings and maintenance deals.</p>
-        <div class="card-actions">
-          <a href="#" class="btn btn-outline disabled">Coming Soon</a>
-        </div>
-      </article>
-    </section>
+  <!-- ================= OFFERS LIST ================= -->
+  <section class="offers-list container" aria-label="Active offers">
 
-    <section class="offers-info container">
-      <p>All offers are subject to verification. Large gifts require verification and commissioning. Read terms on each offer page.</p>
-    </section>
+    <!-- CHRISTMAS CARD -->
+    <article class="offer-card highlight" data-offer="christmas" tabindex="0">
+      <div class="card-badge">Popular</div>
+      <h2>🎄 Christmas Gift Offer</h2>
+      <p class="card-desc">Click to reveal instant gifts up to ₹25,000. Mandatory KSEB details required.</p>
+      <div class="card-actions">
+        <a href="/christmas/" class="btn btn-primary offer-cta" data-offer="christmas">View Christmas Offer</a>
+      </div>
+    </article>
 
-    <footer class="offers-footer container">
-      <p>© <span id="year"></span> Solis Green Energy Solutions — offers.solisgreenindia.in</p>
-    </footer>
-  </main>
+    <!-- NEW YEAR (COMING SOON) -->
+    <article class="offer-card" data-offer="newyear" tabindex="0">
+      <h2>🎉 New Year Offer</h2>
+      <p class="card-desc">Launching soon with attractive solar booking rewards.</p>
+      <div class="card-actions"><a class="btn btn-outline disabled">Coming Soon</a></div>
+    </article>
+
+    <!-- SUMMER (COMING SOON) -->
+    <article class="offer-card" data-offer="summer" tabindex="0">
+      <h2>☀️ Summer Solar Offer</h2>
+      <p class="card-desc">Prepare for summer savings with smart solar discounts.</p>
+      <div class="card-actions"><a class="btn btn-outline disabled">Coming Soon</a></div>
+    </article>
+
+  </section>
+
+  <!-- ================ COMPANY INTRO (Option 3) ================= -->
+  <section class="company-intro container">
+    <h2>About Solis Green India</h2>
+
+    <p class="intro-text">
+      Solis Green India is a leading solar EPC company based in Thiruvalla, Kerala—trusted by 
+      <strong>500+ homeowners and businesses</strong>. We deliver end-to-end solar solutions including consultation, installation, subsidy processing, and maintenance.
+    </p>
+
+    <ul class="intro-list">
+      <li>Residential & Commercial Solar Installations</li>
+      <li>KSEB On-Grid & Hybrid Systems</li>
+      <li>Government Subsidy Assistance</li>
+      <li>Expert Survey & Technical Support</li>
+      <li>Quality Panels with 25-year Warranty</li>
+      <li>Local Team with 24×7 Service Support</li>
+    </ul>
+
+    <!-- 3 Feature Cards -->
+    <div class="features-grid">
+      <div class="feature-box">
+        <h3>500+ Installations</h3>
+        <p>Trusted by homeowners and businesses across Kerala.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Govt Subsidy Support</h3>
+        <p>Guidance for Kerala – KSEB / MNRE subsidy approvals.</p>
+      </div>
+      <div class="feature-box">
+        <h3>25-Year Warranty</h3>
+        <p>High-performance panels from top-tier brands.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="offers-footer container">
+    <p>© <span id="year"></span> Solis Green India Solutions</p>
+  </footer>
 
   <script src="/assets/js/offers.js" defer></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
