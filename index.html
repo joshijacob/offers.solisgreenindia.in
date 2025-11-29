@@ -7,127 +7,180 @@
 
   <meta name="description" content="Seasonal offers and festive cashback campaigns from Solis Green India. Enjoy special Christmas and New Year solar rewards." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://offers.solisgreenindia.in/"/>
+  <link rel="canonical" href="https://offers.solisgreenindia.in/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Seasonal Offers | Solis Green India"/>
-  <meta property="og:description" content="Exclusive festive solar offers including Christmas, New Year and seasonal rewards. Claim your instant gifts."/>
-  <meta property="og:image" content="/assets/images/og-offers.jpg"/>
-  <meta property="og:url" content="https://offers.solisgreenindia.in/"/>
+  <!-- Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/assets/css/offers.css"/>
+  <!-- Main theme CSS (Gold & White Premium) -->
+  <link rel="stylesheet" href="/assets/css/offers.css">
+
+  <!-- Christmas accent overrides: red & gold CTAs + badge -->
+  <style>
+    /* Christmas red & gold accent overrides (scoped, minimal) */
+    .offer-card.highlight { 
+      /* keep the bright card but change accent border slightly */
+      border: 2px solid rgba(255, 197, 60, 0.12);
+      background: linear-gradient(180deg,#fffaf6,#ffffff);
+    }
+
+    /* badge: glowing red -> gold */
+    .offer-card.highlight .card-badge {
+      background: linear-gradient(90deg, #d72626 0%, #ffb84d 100%);
+      color: #2b1700;
+      box-shadow: 0 10px 30px rgba(215,40,40,0.12);
+    }
+
+    /* primary CTA (for highlighted/Christmas card): red button with gold rim */
+    .offer-card.highlight .btn-primary {
+      background: linear-gradient(180deg, #c92b2b, #8b1a1a);
+      border: 1px solid rgba(255, 190, 80, 0.14);
+      box-shadow: 0 12px 34px rgba(200,30,30,0.18);
+    }
+
+    /* CTA hover: gold outline and subtle glow */
+    .offer-card.highlight .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 48px rgba(200,30,30,0.24), 0 0 18px rgba(255, 190, 80, 0.08);
+      border-color: rgba(255,190,80,0.28);
+    }
+
+    /* small trophy/amount style if you show amounts later */
+    .prize-pill {
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:700;
+      background: linear-gradient(90deg,#ffd24d,#ffb84d);
+      color:#3b2300;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Slight extra emphasis for Christmas title */
+    .offer-card.highlight h2::before {
+      content: "🎁 ";
+    }
+
+    /* Ensure text contrast for buttons on mobile */
+    @media (max-width:640px){
+      .offer-card.highlight .btn-primary { padding:12px 18px; font-size:1rem; }
+      .card-badge { font-size:0.9rem; padding:7px 12px; }
+    }
+  </style>
 </head>
 
 <body>
-
-  <!-- ================= HEADER ================= -->
-  <header class="offers-header container">
+  <!-- Header -->
+  <header class="offers-header container" role="banner">
     <a class="brand" href="https://solisgreenindia.in" rel="noopener">
-      <img src="/images/logo/logo.png" alt="Solis Green India" class="brand-logo"/>
-      <!-- NOTE: removed separate text link; only the logo image is clickable as requested -->
+      <img src="/images/logo/logo.png" alt="Solis Green India" class="brand-logo" />
     </a>
 
     <h1 class="offers-title">Seasonal Offers</h1>
     <p class="offers-sub">Exclusive festive rewards and limited-period cashback programs.</p>
   </header>
 
-  <!-- ================= OFFERS LIST ================= -->
-  <section class="offers-list container" aria-label="Active offers">
+  <!-- decorative confetti/glow (optional) -->
+  <div class="hero-confetti" aria-hidden="true"></div>
 
-    <!-- CHRISTMAS CARD -->
-    <article class="offer-card highlight" data-offer="christmas" tabindex="0">
-      <div class="card-badge">Popular</div>
-      <h2>🎄 Christmas Gift Offer</h2>
-      <p class="card-desc">Click to reveal instant gifts up to ₹25,000. Mandatory KSEB details required.</p>
-      <div class="card-actions">
-        <a href="/christmas/" class="btn btn-primary offer-cta" data-offer="christmas">View Christmas Offer</a>
-      </div>
-    </article>
-
-    <!-- NEW YEAR (COMING SOON) -->
-    <article class="offer-card" data-offer="newyear" tabindex="0">
-      <h2>🎉 New Year Offer</h2>
-      <p class="card-desc">Launching soon with attractive solar booking rewards.</p>
-      <div class="card-actions"><a class="btn btn-outline disabled">Coming Soon</a></div>
-    </article>
-
-    <!-- SUMMER (COMING SOON) -->
-    <article class="offer-card" data-offer="summer" tabindex="0">
-      <h2>☀️ Summer Solar Offer</h2>
-      <p class="card-desc">Prepare for summer savings with smart solar discounts.</p>
-      <div class="card-actions"><a class="btn btn-outline disabled">Coming Soon</a></div>
-    </article>
-
-  </section>
-
-  <!-- ================ COMPANY INTRO (Option 3) ================= -->
-  <section class="company-intro container">
-    <h2>About Solis Green India</h2>
-
-    <p class="intro-text">
-      Solis Green India is a leading solar EPC company based in Thiruvalla, Kerala—trusted by 
-      <strong>500+ homeowners and businesses</strong>. We deliver end-to-end solar solutions including consultation, installation, subsidy processing, and maintenance.
-    </p>
-
-    <ul class="intro-list">
-      <li>Residential & Commercial Solar Installations</li>
-      <li>KSEB On-Grid & Hybrid Systems</li>
-      <li>Government Subsidy Assistance</li>
-      <li>Expert Survey & Technical Support</li>
-      <li>Quality Panels with 25-year Warranty</li>
-      <li>Local Team with 24×7 Service Support</li>
-    </ul>
-
-    <!-- 3 Feature Cards -->
-    <div class="features-grid">
-      <div class="feature-box">
-        <h3>500+ Installations</h3>
-        <p>Trusted by homeowners and businesses across Kerala.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Govt Subsidy Support</h3>
-        <p>Guidance for Kerala – KSEB / MNRE subsidy approvals.</p>
-      </div>
-      <div class="feature-box">
-        <h3>25-Year Warranty</h3>
-        <p>High-performance panels from top-tier brands.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================ CONTACT DETAILS (Bottom) ================= -->
-  <section class="contact-block container" aria-label="Contact details" style="margin-top:28px;">
-    <div style="background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-      <h3 style="text-align:center; color: #ffd24d; margin:0 0 10px; font-family: 'Poppins', sans-serif;">Contact Solis Green India</h3>
-      <div style="display:flex; flex-wrap:wrap; gap:18px; justify-content:center; align-items:center; color:#e8f3ea;">
-        <div style="min-width:220px; text-align:left;">
-          <strong>Primary (Sales)</strong><br/>
-          <a href="tel:8301849474" style="color: #dff6e1; text-decoration:none;">📞 83018 49474</a><br/>
-          <a href="https://wa.me/918301849474" target="_blank" rel="noopener" style="color:#dff6e1; text-decoration:none;">💬 WhatsApp</a>
+  <!-- Offers carousel -->
+  <main class="container" role="main">
+    <section class="offers-list" aria-label="Active offers">
+      <!-- Christmas (highlighted) -->
+      <article class="offer-card highlight" data-offer="christmas" tabindex="0" aria-label="Christmas Offer">
+        <div class="card-badge">Popular</div>
+        <h2>Christmas Gift Offer</h2>
+        <p class="card-desc">Click to reveal instant gifts up to <strong>₹25,000</strong>. Mandatory KSEB details required. Claim on confirmed submission.</p>
+        <div class="card-actions">
+          <a href="/christmas/" class="btn btn-primary offer-cta" data-offer="christmas" title="View Christmas Offer">View Christmas Offer</a>
         </div>
+      </article>
 
-        <div style="min-width:220px; text-align:left;">
-          <strong>Alternate (Sales)</strong><br/>
-          <a href="tel:9539316623" style="color:#dff6e1; text-decoration:none;">📞 95393 16623</a><br/>
-          <a href="https://wa.me/919539316623" target="_blank" rel="noopener" style="color:#dff6e1; text-decoration:none;">💬 WhatsApp</a>
+      <!-- New Year (coming soon) -->
+      <article class="offer-card" data-offer="newyear" tabindex="0" aria-label="New Year Offer - Coming Soon">
+        <h2>New Year Offer</h2>
+        <p class="card-desc">Launching soon — special discounts for early bookings.</p>
+        <div class="card-actions">
+          <a class="btn btn-outline disabled" aria-disabled="true">Coming Soon</a>
         </div>
+      </article>
 
-        <div style="min-width:220px; text-align:left;">
-          <strong>Technical Support</strong><br/>
-          <a href="tel:8606849474" style="color:#dff6e1; text-decoration:none;">🛠️ 86068 49474</a><br/>
-          <a href="mailto:solisgreenindia@gmail.com" style="color:#dff6e1; text-decoration:none;">✉ solisgreenindia@gmail.com</a>
+      <!-- Summer (coming soon) -->
+      <article class="offer-card" data-offer="summer" tabindex="0" aria-label="Summer Offer - Coming Soon">
+        <h2>Summer Solar Offer</h2>
+        <p class="card-desc">Prepare for summer savings with smart solar discounts and maintenance promos.</p>
+        <div class="card-actions">
+          <a class="btn btn-outline disabled" aria-disabled="true">Coming Soon</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Company intro (bottom) -->
+    <section class="company-intro" aria-labelledby="aboutOffers">
+      <h2 id="aboutOffers">About Solis Green India</h2>
+
+      <p class="intro-text">
+        Solis Green India is a leading solar EPC company based in Thiruvalla, Kerala—trusted by 
+        <strong>500+ homeowners and businesses</strong>. We deliver end-to-end solar solutions including consultation, installation, subsidy processing, and maintenance.
+      </p>
+
+      <ul class="intro-list" aria-hidden="false">
+        <li>Residential & Commercial Solar Installations</li>
+        <li>KSEB On-Grid & Hybrid Systems</li>
+        <li>Government Subsidy Assistance</li>
+        <li>Expert Survey & Technical Support</li>
+        <li>Quality Panels with 25-year Warranty</li>
+        <li>Local Team with 24×7 Service Support</li>
+      </ul>
+
+      <div class="features-grid" role="list">
+        <div class="feature-box" role="listitem">
+          <h3>500+ Installations</h3>
+          <p>Trusted by homeowners and businesses across Kerala.</p>
+        </div>
+        <div class="feature-box" role="listitem">
+          <h3>Govt Subsidy Support</h3>
+          <p>Guidance for Kerala – KSEB / MNRE subsidy approvals.</p>
+        </div>
+        <div class="feature-box" role="listitem">
+          <h3>25-Year Warranty</h3>
+          <p>High-performance panels backed by long-term warranties.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="offers-footer container" style="margin-top:22px;">
-    <p>© <span id="year"></span> Solis Green India Solutions</p>
-  </footer>
+    <!-- Contact block -->
+    <section class="contact-block" aria-label="Contact details">
+      <div class="contact-inner">
+        <h3>Contact Solis Green India</h3>
 
+        <div class="contact-column" role="group" aria-label="Primary Sales">
+          <strong>Primary (Sales)</strong>
+          <a href="tel:8301849474">📞 83018 49474</a>
+          <a class="whatsapp" href="https://wa.me/918301849474" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+
+        <div class="contact-column" role="group" aria-label="Alternate Sales">
+          <strong>Alternate (Sales)</strong>
+          <a href="tel:9539316623">📞 95393 16623</a>
+          <a class="whatsapp" href="https://wa.me/919539316623" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+
+        <div class="contact-column" role="group" aria-label="Technical Support">
+          <strong>Technical Support</strong>
+          <a href="tel:8606849474">🛠️ 86068 49474</a>
+          <a class="email" href="mailto:solisgreenindia@gmail.com">✉ solisgreenindia@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="offers-footer" role="contentinfo">
+      <p>© <span id="year"></span> Solis Green India Solutions</p>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
   <script src="/assets/js/offers.js" defer></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
