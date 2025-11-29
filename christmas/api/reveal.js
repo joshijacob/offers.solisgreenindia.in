@@ -1,4 +1,4 @@
-// Simple reveal function with click counter simulation
+// /christmas/api/reveal.js
 export default async function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -17,8 +17,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Simulate click counter - in production, use Vercel KV
-    // For now, we'll use a simple random simulation
+    // In production, you'd use Vercel KV for persistent counter
+    // For now, we'll simulate the click counter logic
     const simulatedCount = Math.floor(Math.random() * 100) + 1;
     let prize = 5000; // Default
     
@@ -43,7 +43,7 @@ export default async function handler(req, res) {
       simulatedCount: simulatedCount // Remove this in production
     };
 
-    console.log('Reveal generated:', { token: revealToken, prize, simulatedCount });
+    console.log('🎄 Reveal generated:', { token: revealToken, prize, simulatedCount });
 
     res.status(200).json(response);
     
