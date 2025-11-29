@@ -1,65 +1,79 @@
 /* assets/css/offers.css
-   Polished styles for offers.solisgreenindia.in
-   - Rich gradient background
-   - Improved typography (Poppins)
-   - Glass-like elevated cards with soft shadows
-   - CTA improvements and hover / entrance animations
-   - Company intro styling (Option 3)
-   - Responsive layout tweaks
-   - Horizontal sliding carousel layout for offer cards
+   Option A — Festive Warm Gradient theme
+   - Two-tone warm gradient + radial glow
+   - Subtle bokeh texture (CSS)
+   - Improved card proportions (wider cards)
+   - Gold accents, glowing headings
+   - Carousel-friendly, responsive
+   - Works with existing offers.js carousel behavior
 */
 
-/* Hint: include this in <head> if not already:
+/* Include Poppins in <head>:
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 */
 
 :root{
-  --max-width:1100px;
-  --bg-dark-1:#072214;
-  --bg-dark-2:#062b17;
-  --emerald-1:#0f3f0f;
-  --emerald-2:#1f7a1f;
+  --max-width:1180px;
+
+  /* Background & brand */
+  --bg-top:#08321f;        /* deep emerald */
+  --bg-bottom:#0f3f23;     /* warm forest */
+  --hero-glow: rgba(255, 210, 77, 0.07); /* soft gold glow behind hero */
+
+  /* accents */
+  --accent-emerald-1:#1f7a1f;
+  --accent-emerald-2:#0f3f0f;
   --accent-gold:#ffd24d;
-  --card:#ffffff;
-  --glass: rgba(255,255,255,0.04);
-  --muted:#9fb49a;
-  --text:#e9f3ea;
-  --shadow-lg: 0 20px 50px rgba(2,14,8,0.55);
-  --shadow-md: 0 10px 30px rgba(2,14,8,0.38);
-  --radius-lg: 16px;
-  --radius-md: 12px;
-  --gap:20px;
+
+  /* card & text */
+  --card-bg: #ffffff;
+  --muted: #9fb49a;
+  --text: #0d2b18;
+
+  /* geometry */
+  --gap:22px;
+  --radius-lg:16px;
+  --radius-md:12px;
+
+  /* shadows */
+  --shadow-lg: 0 28px 60px rgba(6,24,12,0.55);
+  --shadow-md: 0 12px 30px rgba(6,24,12,0.35);
+
   --ff-heading: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans";
   --ff-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans";
 }
 
-/* Base reset */
+/* -------------------------
+   RESET & BASE
+   ------------------------- */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
-  min-height:100%;
   font-family:var(--ff-body);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   color:var(--text);
-  background:
-    radial-gradient(1200px 600px at 10% 10%, rgba(255,255,255,0.02), transparent 10%),
-    linear-gradient(180deg, var(--bg-dark-1) 0%, var(--bg-dark-2) 60%);
-  padding:28px 16px;
   line-height:1.6;
+  padding:28px 16px;
+
+  /* Warm festive background:
+     - linear gradient base
+     - subtle radial glow near top center (hero)
+     - soft repeating-radial to mimic bokeh/texture
+  */
+  background:
+    radial-gradient(1000px 420px at 50% 8%, var(--hero-glow), transparent 14%),
+    repeating-radial-gradient(circle at 10% 20%, rgba(255,255,255,0.01) 0 6px, transparent 7px 26px),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 62%);
 }
 
-/* Container */
-.container{
-  max-width:var(--max-width);
-  margin:0 auto;
-  width:100%;
-}
+/* container */
+.container{ max-width:var(--max-width); margin:0 auto; width:100%; }
 
-/* ---------------------------
-   Header / Brand
-   --------------------------- */
+/* -------------------------
+   HEADER / HERO
+   ------------------------- */
 .offers-header{
   text-align:center;
   margin-bottom:var(--gap);
@@ -71,7 +85,7 @@ body{
 
 .brand{
   display:inline-flex;
-  gap:12px;
+  gap:10px;
   align-items:center;
   text-decoration:none;
 }
@@ -79,21 +93,20 @@ body{
   height:52px;
   width:auto;
   display:inline-block;
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.45));
   border-radius:8px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   padding:4px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.45));
 }
 
-/* Hero Title */
+/* hero title */
 .offers-title{
   margin:6px 0 0;
   font-family:var(--ff-heading);
   font-weight:800;
-  font-size:clamp(26px,4.6vw,40px);
+  font-size:clamp(26px,5vw,44px);
   color:var(--accent-gold);
-  text-align:center;
-  text-shadow:0 6px 18px rgba(0,0,0,0.55);
+  text-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
 .offers-sub{
   margin:0;
@@ -103,54 +116,56 @@ body{
   font-size:1rem;
 }
 
-/* ---------------------------
-   Carousel layout & cards
-   --------------------------- */
-/* Horizontal sliding carousel container */
+/* -------------------------
+   OFFERS CAROUSEL (HORIZONTAL)
+   - cards are wider (avoid tall skinny)
+   - scroll-snap for smooth manual scrolling
+   ------------------------- */
+
 .offers-list {
   display: flex;
   gap: var(--gap);
-  margin: 26px 0;
-  align-items: stretch;
+  margin: 28px 0;
+  align-items:stretch;
   overflow: hidden;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 6px;
-  /* hide scrollbar visually while keeping scrollability */
   scrollbar-width: none; /* firefox */
 }
-.offers-list::-webkit-scrollbar { display: none; } /* chrome */
+.offers-list::-webkit-scrollbar{ display:none; }
 
+/* Wider card layout: show 3 cards on large, 2 on medium, 1 on small */
 .offer-card{
   flex: 0 0 calc((100% - (var(--gap) * 2)) / 3);
   min-width: calc((100% - (var(--gap) * 2)) / 3);
   max-width: calc((100% - (var(--gap) * 2)) / 3);
-  scroll-snap-align: center;
+  scroll-snap-align:center;
   background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.96));
-  color:#083317;
-  border-radius:var(--radius-md);
-  padding:22px;
-  box-shadow:0 12px 40px rgba(0,0,0,0.18);
-  transition: transform 240ms cubic-bezier(.2,.9,.3,1), box-shadow 240ms ease, border-color 240ms ease;
+  color: var(--text);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  box-shadow: var(--shadow-md);
+  transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms ease;
   position:relative;
-  min-height:180px;
   display:flex;
   flex-direction:column;
-  gap:14px;
-  border:1px solid rgba(10,20,10,0.03);
-  cursor: pointer;
+  gap:12px;
+  border: 1px solid rgba(10,20,10,0.03);
+  cursor:pointer;
 }
 .offer-card:hover{
-  transform:translateY(-8px);
+  transform:translateY(-10px);
   box-shadow: var(--shadow-lg);
 }
 
+/* highlight variation */
 .offer-card.highlight{
   border: 2px solid rgba(255,210,77,0.12);
-  background: linear-gradient(180deg,#ffffff,#fffdf7);
+  background: linear-gradient(180deg,#fffdf5,#ffffff);
 }
 
-/* Badge */
+/* smaller rounded corner badge */
 .card-badge{
   position:absolute;
   right:14px;
@@ -164,540 +179,149 @@ body{
   box-shadow:0 8px 20px rgba(0,0,0,0.12);
 }
 
-/* Card title & desc */
-.offer-card h2{
-  margin:0;
-  font-size:1.05rem;
-  font-weight:700;
-}
-.card-desc{
-  margin:0;
-  color:#35623f;
-  font-size:0.95rem;
-}
+/* Titles & desc */
+.offer-card h2{ margin:0; font-size:1.05rem; font-weight:700; }
+.card-desc{ margin:0; color:#355d40; font-size:0.98rem; line-height:1.6; }
 
 /* card actions */
 .card-actions{ margin-top:auto; display:flex; gap:12px; align-items:center; }
 
-/* Buttons */
+/* CTA buttons - strong green gradient; gold rim on hover */
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 16px;
-  border-radius:10px;
-  font-weight:700;
-  text-decoration:none;
-  cursor:pointer;
-  font-size:0.98rem;
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 16px; border-radius:10px; font-weight:700; text-decoration:none;
+  cursor:pointer; font-size:0.98rem;
 }
 .btn-primary{
-  background: linear-gradient(180deg,var(--emerald-2),var(--emerald-1));
-  color:#fff;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 10px 26px rgba(15,63,15,0.22);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  background: linear-gradient(180deg, var(--accent-emerald-1), var(--accent-emerald-2));
+  color:#fff; border:1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 10px 26px rgba(12,60,18,0.22);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
-.btn-primary:hover{ transform:translateY(-3px); box-shadow: 0 18px 40px rgba(15,63,15,0.30); }
-
-.btn-outline{
-  background: transparent;
-  color: var(--emerald-2);
-  border: 2px solid rgba(31,122,31,0.09);
-}
-.btn-outline.disabled, .btn.disabled{ opacity:0.66; pointer-events:none; }
-
-/* Responsive: show 2 cards on medium, 1 on small */
-@media (max-width:1000px) {
-  .offer-card {
-    flex: 0 0 calc((100% - var(--gap)) / 2);
-    min-width: calc((100% - var(--gap)) / 2);
-    max-width: calc((100% - var(--gap)) / 2);
-  }
-}
-@media (max-width:640px) {
-  .offers-list {
-    display: block; /* stacked layout on very small screens */
-    overflow: visible;
-  }
-  .offer-card {
-    flex: none;
-    width: 100%;
-    min-width: auto;
-    max-width: none;
-    margin-bottom: var(--gap);
-  }
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow: 0 18px 42px rgba(12,60,18,0.30);
+  border-color: rgba(255,210,77,0.25);
+  outline: 2px solid rgba(255,210,77,0.06);
 }
 
-/* ---------------------------
-   Company Intro (Option 3)
-   --------------------------- */
+/* outline button */
+.btn-outline{ background:transparent; color:var(--accent-emerald-1); border:2px solid rgba(31,122,31,0.08); }
+.btn-outline.disabled{ opacity:0.66; pointer-events:none; }
+
+/* -------------------------
+   COMPANY INTRO (Option 3)
+   ------------------------- */
 .company-intro{
   margin-top:44px;
   padding:28px;
-  background: linear-gradient(180deg, rgba(10,30,12,0.6), rgba(7,28,14,0.5));
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border-radius:18px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.02);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+  border: 1px solid rgba(0,0,0,0.03);
+  color:#f1f7ee;
 }
 
 .company-intro h2{
-  text-align:center;
-  color:var(--accent-gold);
-  font-family:var(--ff-heading);
-  margin:0 0 12px;
-  font-weight:800;
-  font-size:1.45rem;
-  text-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  text-align:center; color:var(--accent-gold);
+  font-family:var(--ff-heading); margin:0 0 12px; font-weight:800; font-size:1.45rem;
+  text-shadow:0 6px 18px rgba(0,0,0,0.45);
 }
 
 .intro-text{
-  text-align:center;
-  color:#dbecd8;
-  margin:0 auto 18px;
-  max-width:900px;
-  line-height:1.7;
-  font-size:1.02rem;
+  text-align:center; color:#e6f1e5; margin:0 auto 18px; max-width:900px; line-height:1.7; font-size:1.02rem;
 }
 
 .intro-list{
-  list-style:none;
-  padding:0;
-  margin:0 auto;
-  max-width:780px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px 24px;
-  justify-content:center;
+  list-style:none; padding:0; margin:0 auto; max-width:780px;
+  display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:center;
 }
 .intro-list li{
-  color:var(--muted);
-  width:calc(50% - 24px);
-  min-width:220px;
-  text-align:left;
-  padding:6px 0;
-  font-size:0.98rem;
+  color:var(--muted); width:calc(50% - 24px); min-width:220px; text-align:left;
+  padding:6px 0; font-size:0.98rem;
 }
 
-/* Feature grid */
-.features-grid{
-  display:flex;
-  gap:18px;
-  margin-top:22px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
+/* Feature boxes */
+.features-grid{ display:flex; gap:18px; margin-top:22px; justify-content:center; flex-wrap:wrap; }
 .feature-box{
-  min-width:220px;
-  max-width:300px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  padding:18px;
-  border-radius:12px;
-  text-align:center;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  min-width:220px; max-width:300px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:18px; border-radius:12px; text-align:center; box-shadow: 0 12px 30px rgba(0,0,0,0.18);
   border:1px solid rgba(255,255,255,0.02);
 }
 .feature-box h3{ margin:0 0 8px; color:var(--accent-gold); font-size:1.05rem; font-weight:800; }
-.feature-box p{ margin:0; color:#cfe4cf; font-size:0.95rem; line-height:1.45; }
+.feature-box p{ margin:0; color:#dcefd6; font-size:0.95rem; line-height:1.45; }
 
-/* ---------------------------
-   Footer
-   --------------------------- */
-.offers-footer{
-  margin-top:36px;
-  text-align:center;
-  color:#dfeee1;
-  font-size:0.95rem;
+/* -------------------------
+   CONTACT block & FOOTER
+   ------------------------- */
+.contact-block{ margin-top:28px; }
+.contact-inner{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:18px; border-radius:12px; display:flex; flex-wrap:wrap; gap:18px; justify-content:center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  border:1px solid rgba(255,255,255,0.02);
 }
+.contact-inner a{ color:#eaf7ea; text-decoration:none; font-weight:600; }
 
-/* ---------------------------
-   Micro-interactions & animation
-   --------------------------- */
+.offers-footer{ margin-top:36px; text-align:center; color:#dfeee1; font-size:0.95rem; }
+
+/* -------------------------
+   ANIMATIONS & MICRO-INTERACTIONS
+   ------------------------- */
 @keyframes fadeUp { from { opacity:0; transform: translateY(8px);} to {opacity:1; transform:none;} }
 .offer-card, .company-intro, .feature-box { animation: fadeUp 520ms ease both; }
-
-/* slight stagger for card children */
 .offers-list .offer-card:nth-child(1){ animation-delay: 0s; }
 .offers-list .offer-card:nth-child(2){ animation-delay: 80ms; }
 .offers-list .offer-card:nth-child(3){ animation-delay: 160ms; }
 
-/* ---------------------------
-   Responsive tweaks
-   --------------------------- */
+/* Make the hero glow subtle and festive */
+.offers-title { text-shadow: 0 12px 36px rgba(255,210,77,0.06); }
+
+/* -------------------------
+   RESPONSIVE TWEAKS
+   ------------------------- */
 @media (max-width:1000px){
+  .offer-card { flex: 0 0 calc((100% - var(--gap)) / 2); min-width: calc((100% - var(--gap)) / 2); max-width: calc((100% - var(--gap)) / 2); }
   .intro-list li{ width:calc(50% - 20px); }
-  .feature-box{ min-width: 200px; }
 }
 @media (max-width:640px){
   body{ padding:18px 12px; }
-  .offers-list{ gap:14px; }
-  .company-intro{ padding:18px; }
+  .offers-title{ font-size:24px; }
+  .offers-list{ display:block; overflow:visible; gap:16px; }
+  .offer-card{ width:100%; min-width:auto; max-width:none; margin-bottom:var(--gap); }
   .intro-list{ flex-direction:column; align-items:flex-start; }
   .intro-list li{ width:100%; }
   .brand-logo{ height:46px; }
-  .offers-title{ font-size:24px; }
 }
 
-/* ---------------------------
-   Accessibility helpers
-   --------------------------- */
+/* -------------------------
+   ACCESSIBILITY
+   ------------------------- */
 .offer-card:focus{ outline: 3px solid rgba(255,210,77,0.12); transform: translateY(-6px); }
 
-/* ---------------------------
-   Optional: Floating WhatsApp CTA (uncomment HTML to use)
-   --------------------------- */
-.fab-whatsapp {
-  position: fixed;
-  right:18px;
-  bottom:18px;
-  z-index:9999;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:56px;
-  height:56px;
-  border-radius:999px;
-  background: linear-gradient(180deg,#09b44d,#078f3b);
-  color:#fff;
-  box-shadow:0 12px 30px rgba(7,56,31,0.45);
-  text-decoration:none;
-  font-weight:700;
+/* -------------------------
+   Optional confetti accents (pure CSS, tiny decorative dots)
+   - does not require external images
+   ------------------------- */
+.hero-confetti {
+  position:absolute;
+  left:50%;
+  top:70px;
+  transform:translateX(-50%);
+  width:640px;
+  height:60px;
+  pointer-events:none;
+  opacity:0.12;
+  background-image:
+    radial-gradient(circle at 10% 30%, rgba(255,210,77,0.95) 2px, transparent 3px),
+    radial-gradient(circle at 30% 50%, rgba(255,255,255,0.85) 2px, transparent 3px),
+    radial-gradient(circle at 50% 20%, rgba(255,210,77,0.95) 2px, transparent 3px),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.8) 2px, transparent 3px),
+    radial-gradient(circle at 90% 35%, rgba(255,210,77,0.95) 2px, transparent 3px);
+  filter: blur(1px);
+  mix-blend-mode: screen;
 }
-.fab-whatsapp:hover{ transform: translateY(-4px); }
 
 /* Utilities */
-.text-center{text-align:center}
-.hidden{ display:none !important; }
-
-:root{
-  --max-width:1100px;
-  --bg-dark-1:#072214;
-  --bg-dark-2:#062b17;
-  --emerald-1:#0f3f0f;
-  --emerald-2:#1f7a1f;
-  --accent-gold:#ffd24d;
-  --card:#ffffff;
-  --glass: rgba(255,255,255,0.04);
-  --muted:#9fb49a;
-  --text:#e9f3ea;
-  --shadow-lg: 0 20px 50px rgba(2,14,8,0.55);
-  --shadow-md: 0 10px 30px rgba(2,14,8,0.38);
-  --radius-lg: 16px;
-  --radius-md: 12px;
-  --gap:20px;
-  --ff-heading: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans";
-  --ff-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans";
-}
-
-/* Base reset */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  min-height:100%;
-  font-family:var(--ff-body);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  color:var(--text);
-  background:
-    radial-gradient(1200px 600px at 10% 10%, rgba(255,255,255,0.02), transparent 10%),
-    linear-gradient(180deg, var(--bg-dark-1) 0%, var(--bg-dark-2) 60%);
-  padding:28px 16px;
-  line-height:1.6;
-}
-
-/* Container */
-.container{
-  max-width:var(--max-width);
-  margin:0 auto;
-  width:100%;
-}
-
-/* ---------------------------
-   Header / Brand
-   --------------------------- */
-.offers-header{
-  text-align:center;
-  margin-bottom:var(--gap);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
-}
-
-.brand{
-  display:inline-flex;
-  gap:12px;
-  align-items:center;
-  text-decoration:none;
-}
-.brand-logo{
-  height:52px;
-  width:auto;
-  display:inline-block;
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.45));
-  border-radius:8px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  padding:4px;
-}
-.brand-text {
-  color: var(--accent-gold);
-  font-weight:700;
-  font-family: var(--ff-heading);
-  letter-spacing:0.2px;
-  text-decoration:underline;
-}
-
-/* Hero Title */
-.offers-title{
-  margin:6px 0 0;
-  font-family:var(--ff-heading);
-  font-weight:800;
-  font-size:clamp(26px,4.6vw,40px);
-  color:var(--accent-gold);
-  text-align:center;
-  text-shadow:0 6px 18px rgba(0,0,0,0.55);
-}
-.offers-sub{
-  margin:0;
-  color:var(--muted);
-  max-width:920px;
-  text-align:center;
-  font-size:1rem;
-}
-
-/* ---------------------------
-   Offers grid & cards
-   --------------------------- */
-.offers-list{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:var(--gap);
-  margin:26px 0;
-  align-items:start;
-}
-@media (max-width:1000px){ .offers-list{ grid-template-columns: repeat(2,1fr); } }
-@media (max-width:640px){ .offers-list{ grid-template-columns: 1fr; } }
-
-.offer-card{
-  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.96));
-  color:#083317;
-  border-radius:var(--radius-md);
-  padding:22px;
-  box-shadow:0 12px 40px rgba(0,0,0,0.18);
-  transition: transform 240ms cubic-bezier(.2,.9,.3,1), box-shadow 240ms ease, border-color 240ms ease;
-  position:relative;
-  min-height:180px;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  border:1px solid rgba(10,20,10,0.03);
-}
-.offer-card:hover{
-  transform:translateY(-8px);
-  box-shadow: var(--shadow-lg);
-}
-
-.offer-card.highlight{
-  border: 2px solid rgba(255,210,77,0.12);
-  background: linear-gradient(180deg,#ffffff,#fffdf7);
-}
-
-/* Badge */
-.card-badge{
-  position:absolute;
-  right:14px;
-  top:14px;
-  background:var(--accent-gold);
-  color:#2b2000;
-  padding:6px 10px;
-  border-radius:999px;
-  font-weight:700;
-  font-size:0.86rem;
-  box-shadow:0 8px 20px rgba(0,0,0,0.12);
-}
-
-/* Card title & desc */
-.offer-card h2{
-  margin:0;
-  font-size:1.05rem;
-  font-weight:700;
-}
-.card-desc{
-  margin:0;
-  color:#35623f;
-  font-size:0.95rem;
-}
-
-/* card actions */
-.card-actions{ margin-top:auto; display:flex; gap:12px; align-items:center; }
-
-/* Buttons */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 16px;
-  border-radius:10px;
-  font-weight:700;
-  text-decoration:none;
-  cursor:pointer;
-  font-size:0.98rem;
-}
-.btn-primary{
-  background: linear-gradient(180deg,var(--emerald-2),var(--emerald-1));
-  color:#fff;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 10px 26px rgba(15,63,15,0.22);
-  transition: transform 180ms ease, box-shadow 180ms ease;
-}
-.btn-primary:hover{ transform:translateY(-3px); box-shadow: 0 18px 40px rgba(15,63,15,0.30); }
-
-.btn-outline{
-  background: transparent;
-  color: var(--emerald-2);
-  border: 2px solid rgba(31,122,31,0.09);
-}
-.btn-outline.disabled, .btn.disabled{ opacity:0.66; pointer-events:none; }
-
-/* ---------------------------
-   Company Intro (Option 3)
-   --------------------------- */
-.company-intro{
-  margin-top:44px;
-  padding:28px;
-  background: linear-gradient(180deg, rgba(10,30,12,0.6), rgba(7,28,14,0.5));
-  border-radius:18px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.02);
-}
-
-.company-intro h2{
-  text-align:center;
-  color:var(--accent-gold);
-  font-family:var(--ff-heading);
-  margin:0 0 12px;
-  font-weight:800;
-  font-size:1.45rem;
-  text-shadow: 0 6px 18px rgba(0,0,0,0.45);
-}
-
-.intro-text{
-  text-align:center;
-  color:#dbecd8;
-  margin:0 auto 18px;
-  max-width:900px;
-  line-height:1.7;
-  font-size:1.02rem;
-}
-
-.intro-list{
-  list-style:none;
-  padding:0;
-  margin:0 auto;
-  max-width:780px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px 24px;
-  justify-content:center;
-}
-.intro-list li{
-  color:var(--muted);
-  width:calc(50% - 24px);
-  min-width:220px;
-  text-align:left;
-  padding:6px 0;
-  font-size:0.98rem;
-}
-
-/* Feature grid */
-.features-grid{
-  display:flex;
-  gap:18px;
-  margin-top:22px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-.feature-box{
-  min-width:220px;
-  max-width:300px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  padding:18px;
-  border-radius:12px;
-  text-align:center;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  border:1px solid rgba(255,255,255,0.02);
-}
-.feature-box h3{ margin:0 0 8px; color:var(--accent-gold); font-size:1.05rem; font-weight:800; }
-.feature-box p{ margin:0; color:#cfe4cf; font-size:0.95rem; line-height:1.45; }
-
-/* ---------------------------
-   Footer
-   --------------------------- */
-.offers-footer{
-  margin-top:36px;
-  text-align:center;
-  color:#dfeee1;
-  font-size:0.95rem;
-}
-
-/* ---------------------------
-   Micro-interactions & animation
-   --------------------------- */
-@keyframes fadeUp { from { opacity:0; transform: translateY(8px);} to {opacity:1; transform:none;} }
-.offer-card, .company-intro, .feature-box { animation: fadeUp 520ms ease both; }
-
-/* slight stagger for card children */
-.offers-list .offer-card:nth-child(1){ animation-delay: 0s; }
-.offers-list .offer-card:nth-child(2){ animation-delay: 80ms; }
-.offers-list .offer-card:nth-child(3){ animation-delay: 160ms; }
-
-/* ---------------------------
-   Responsive tweaks
-   --------------------------- */
-@media (max-width:1000px){
-  .intro-list li{ width:calc(50% - 20px); }
-  .feature-box{ min-width: 200px; }
-}
-@media (max-width:640px){
-  body{ padding:18px 12px; }
-  .offers-list{ gap:14px; }
-  .company-intro{ padding:18px; }
-  .intro-list{ flex-direction:column; align-items:flex-start; }
-  .intro-list li{ width:100%; }
-  .brand-logo{ height:46px; }
-  .offers-title{ font-size:24px; }
-}
-
-/* ---------------------------
-   Accessibility helpers
-   --------------------------- */
-.offer-card:focus{ outline: 3px solid rgba(255,210,77,0.12); transform: translateY(-6px); }
-
-/* ---------------------------
-   Optional: Floating WhatsApp CTA (uncomment HTML to use)
-   --------------------------- */
-.fab-whatsapp {
-  position: fixed;
-  right:18px;
-  bottom:18px;
-  z-index:9999;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:56px;
-  height:56px;
-  border-radius:999px;
-  background: linear-gradient(180deg,#09b44d,#078f3b);
-  color:#fff;
-  box-shadow:0 12px 30px rgba(7,56,31,0.45);
-  text-decoration:none;
-  font-weight:700;
-}
-.fab-whatsapp:hover{ transform: translateY(-4px); }
-
-/* ---------------------------
-   Utilities
-   --------------------------- */
 .text-center{text-align:center}
 .hidden{ display:none !important; }
